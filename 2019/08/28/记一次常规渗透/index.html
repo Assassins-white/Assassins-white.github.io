@@ -79,17 +79,40 @@
 
 
 
-<meta name="description" content="行善的最高境界不是施舍，而是引路">
+<meta name="description" content="QQ空间发现别人用PHP自己写了一个二手市场的网站 然后我闲的无聊，就有了本次渗透">
 <meta name="keywords" content="web安全|黑客技术|渗透测试|黑盒测试|网络安全">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Assassins 小白">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记一次常规渗透">
+<meta property="og:url" content="http://yoursite.com/2019/08/28/记一次常规渗透/index.html">
 <meta property="og:site_name" content="Assassins 小白">
-<meta property="og:description" content="行善的最高境界不是施舍，而是引路">
+<meta property="og:description" content="QQ空间发现别人用PHP自己写了一个二手市场的网站 然后我闲的无聊，就有了本次渗透">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/img/19-8-28/1.jpg">
+<meta property="og:image" content="http://yoursite.com/img/19-8-28/2.jpg">
+<meta property="og:image" content="http://yoursite.com/img/19-8-28/3.jpg">
+<meta property="og:image" content="http://yoursite.com/img/19-8-28/4.jpg">
+<meta property="og:image" content="http://yoursite.com/img/19-8-28/7.jpg">
+<meta property="og:image" content="http://yoursite.com/img/19-8-28/5.jpg">
+<meta property="og:image" content="http://yoursite.com/img/19-8-28/6.jpg">
+<meta property="og:image" content="http://yoursite.com/img/19-8-28/8.jpg">
+<meta property="og:image" content="http://yoursite.com/img/19-8-28/9.jpg">
+<meta property="og:image" content="http://yoursite.com/img/19-8-28/10.jpg">
+<meta property="og:image" content="http://yoursite.com/img/19-8-28/11.jpg">
+<meta property="og:image" content="http://yoursite.com/img/19-8-28/12.jpg">
+<meta property="og:image" content="http://yoursite.com/img/19-8-28/14.jpg">
+<meta property="og:image" content="http://yoursite.com/img/19-8-28/13.jpg">
+<meta property="og:image" content="http://yoursite.com/img/19-8-28/15.jpg">
+<meta property="og:image" content="http://yoursite.com/img/19-8-28/16.jpg">
+<meta property="og:image" content="http://yoursite.com/img/19-8-28/17.jpg">
+<meta property="og:image" content="http://yoursite.com/img/19-8-28/18.jpg">
+<meta property="og:image" content="http://yoursite.com/img/19-8-28/19.jpg">
+<meta property="og:image" content="http://yoursite.com/img/19-8-28/20.jpg">
+<meta property="og:image" content="http://yoursite.com/img/19-8-28/21.jpg">
+<meta property="og:updated_time" content="2019-08-28T15:57:03.280Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Assassins 小白">
-<meta name="twitter:description" content="行善的最高境界不是施舍，而是引路">
+<meta name="twitter:title" content="记一次常规渗透">
+<meta name="twitter:description" content="QQ空间发现别人用PHP自己写了一个二手市场的网站 然后我闲的无聊，就有了本次渗透">
+<meta name="twitter:image" content="http://yoursite.com/img/19-8-28/1.jpg">
 
 
 
@@ -119,13 +142,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/28/记一次常规渗透/">
 
 
 
 
 
-  <title>Assassins 小白</title>
+  <title>记一次常规渗透 | Assassins 小白</title>
   
 
 
@@ -144,8 +167,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -218,9 +240,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -250,9 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/28/记一次常规渗透/" itemprop="url">记一次常规渗透</a></h1>
+          <h1 class="post-title" itemprop="name headline">记一次常规渗透</h1>
         
 
         <div class="post-meta">
@@ -302,18 +322,68 @@
       
 
       
-        
-          <p><img src="../../../../img/19-8-28/1.jpg" alt></p>
+        <p><img src="../../../../img/19-8-28/1.jpg" alt></p>
 <p>QQ空间发现别人用PHP自己写了一个二手市场的网站</p>
 <p>然后我闲的无聊，就有了本次渗透</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/08/28/记一次常规渗透/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+<a id="more"></a>
+
+<p>测了一下，输入单引号</p>
+<p><img src="../../../../img/19-8-28/2.jpg" alt></p>
+<p>MySQL数据库直接报错</p>
+<p><img src="../../../../img/19-8-28/3.jpg" alt></p>
+<p>给师傅看了一下，确实是存在注入的</p>
+<p><img src="../../../../img/19-8-28/4.jpg" alt></p>
+<p>然后师傅干活去了，叫我自己整</p>
+<p>但是我拉网线，也没有时间，就只能下班回去看吧</p>
+<p>下班回去之后发现网站打不开了</p>
+<p><img src="../../../../img/19-8-28/7.jpg" alt></p>
+<p>然后..</p>
+<p><img src="../../../../img/19-8-28/5.jpg" alt></p>
+<p>继续。</p>
+<p>抓个POST包，然后丢sqlmap里面跑</p>
+<p><img src="../../../../img/19-8-28/6.jpg" alt></p>
+<p>sqlmap跑的时候发现网站是在wamp文件夹下面的，网站应该存在phpmyadmin</p>
+<p>然后sqlmap跑mysql表下面的user列，但是在user列里面没有找到password字段</p>
+<p>完了我就把user列里面的数据全部dump</p>
+<p><img src="../../../../img/19-8-28/8.jpg" alt></p>
+<p>发现NULL</p>
+<p>然后就直接用户名：root  密码空 登陆phpmyadmin</p>
+<p><img src="../../../../img/19-8-28/9.jpg" alt></p>
+<p>然后利用日志拿到shell  –&gt; <a href="https://www.cnblogs.com/xishaonian/p/6622818.html" target="_blank" rel="noopener">https://www.cnblogs.com/xishaonian/p/6622818.html</a> </p>
+<p><img src="../../../../img/19-8-28/10.jpg" alt></p>
+<p>虚拟终端执行whoami，直接是system权限 （一般用集成环境软件搭建的权限都比较大）</p>
+<p><img src="../../../../img/19-8-28/11.jpg" alt></p>
+<p>看一下ipconfig，是内网</p>
+<p><img src="../../../../img/19-8-28/12.jpg" alt></p>
+<p>然后本来想用Proxifier+reGeorg内网穿透搞这个内网的，但是我电脑没有环境</p>
+<p>然后久哥哥教我用kali里面内嵌的portfwd工具进行端口转发</p>
+<p>现在kali里面配置好ngrok，反弹shell过来</p>
+<p><img src="../../../../img/19-8-28/14.jpg" alt></p>
+<p><img src="../../../../img/19-8-28/13.jpg" alt></p>
+<p>然后msf上面配置</p>
+<p><img src="../../../../img/19-8-28/15.jpg" alt></p>
+<p><img src="../../../../img/19-8-28/16.jpg" alt></p>
+<p>然后反弹过来，msf上线</p>
+<p><img src="../../../../img/19-8-28/17.jpg" alt></p>
+<p>再使用portfwd端口转发 –&gt;  <a href="https://blog.csdn.net/ws13129/article/details/94395905?utm_source=app" target="_blank" rel="noopener">https://blog.csdn.net/ws13129/article/details/94395905?utm_source=app</a> </p>
+<p>-r 填目标内网IP</p>
+<p><img src="../../../../img/19-8-28/18.jpg" alt></p>
+<p>然后我们连接kali的33333端口就是连接的目标站的3389端口</p>
+<p>连接试试</p>
+<p><img src="../../../../img/19-8-28/19.jpg" alt></p>
+<p>提示内部错误。。</p>
+<p>久哥说是不是没开3389啊，然后我看了一下，，好像确实没开</p>
+<p>使用cmd开启3389  –&gt;  <a href="https://www.cnblogs.com/dsli/p/7452535.html" target="_blank" rel="noopener">https://www.cnblogs.com/dsli/p/7452535.html</a> </p>
+<p>开启：REG ADD HKLM\SYSTEM\CurrentControlSet\Control\Terminal” “Server /v fDenyTSConnections /t REG_DWORD /d 0 /f</p>
+<p>然后我们再连接</p>
+<p><img src="../../../../img/19-8-28/20.jpg" alt></p>
+<p>OK，成功</p>
+<p>然后我们再添加一个账号进去</p>
+<p>net user xb xb123.a /add         添加一个用户为xb，密码为xb123.a<br>net localgroup administrators xb /add      把用户xb提升到administrators管理员组</p>
+<p>登陆服务器</p>
+<p><img src="../../../../img/19-8-28/21.jpg" alt></p>
+<p>感谢久哥，感谢师傅，感谢NU1l</p>
+
       
     </div>
     
@@ -330,138 +400,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/05/Github-Hexo搭建静态博客/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Assassins 小白">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://i.loli.net/2019/08/03/3wPIVEoWr9Y8chU.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Assassins 小白">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/05/Github-Hexo搭建静态博客/" itemprop="url">Github+Hexo搭建静态博客</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-05T16:03:12+08:00">
-                2019-08-05
-              </time>
+              <a href="/2019/08/05/Github-Hexo搭建静态博客/" rel="next" title="Github+Hexo搭建静态博客">
+                <i class="fa fa-chevron-left"></i> Github+Hexo搭建静态博客
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p>先安装下面两个软件</p>
-<p>Node.js：<a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a></p>
-<p>Git：<a href="https://git-scm.com/download/win" target="_blank" rel="noopener">https://git-scm.com/download/win</a></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/08/05/Github-Hexo搭建静态博客/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -471,134 +431,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/07/被搁浅的梦/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Assassins 小白">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://i.loli.net/2019/08/03/3wPIVEoWr9Y8chU.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Assassins 小白">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/06/07/被搁浅的梦/" itemprop="url">被搁浅的梦</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-07T19:15:34+08:00">
-                2019-06-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>2019年6月7号</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/06/07/被搁浅的梦/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -606,6 +443,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -823,6 +664,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
