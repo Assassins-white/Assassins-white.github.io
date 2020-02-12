@@ -87,13 +87,14 @@
 <meta property="og:site_name" content="Assassins 小白">
 <meta property="og:description" content="任何一件事，只要心甘情愿，总是能够变得简单，不会有任何复杂的借口和理由。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="c:%5CUsers%5Cxb%5CAppData%5CLocal%5CTemp%5C1581484259789.png">
-<meta property="og:image" content="c:%5CUsers%5Cxb%5CAppData%5CLocal%5CTemp%5C1581485078404.png">
-<meta property="og:updated_time" content="2020-02-12T05:44:06.146Z">
+<meta property="og:image" content="http://yoursite.com/img/20-2-12/1.png">
+<meta property="og:image" content="http://yoursite.com/img/20-2-12/2.png">
+<meta property="og:image" content="http://yoursite.com/img/20-2-12/3.png">
+<meta property="og:updated_time" content="2020-02-12T05:51:56.105Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="kali环境下搭建Tomcat服务器">
 <meta name="twitter:description" content="任何一件事，只要心甘情愿，总是能够变得简单，不会有任何复杂的借口和理由。">
-<meta name="twitter:image" content="c:%5CUsers%5Cxb%5CAppData%5CLocal%5CTemp%5C1581484259789.png">
+<meta name="twitter:image" content="http://yoursite.com/img/20-2-12/1.png">
 
 
 
@@ -316,12 +317,12 @@
 <p>在文档最下方添加以下环境变量配置代码</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/local/xb/jdk1.8</span><br><span class="line">export JRE_HOME=$&#123;JAVA_HOME&#125;/jre</span><br><span class="line">export CLASSPATH=.:$&#123;JAVA_HOME&#125;/lib:$&#123;JRE_HOME&#125;/lib:$CLASSPATH</span><br><span class="line">export JAVA_PATH=$&#123;JAVA_HOME&#125;/bin:$&#123;JRE_HOME&#125;/bin</span><br><span class="line">export PATH=$PATH:$&#123;JAVA_PATH&#125;</span><br></pre></td></tr></table></figure>
 
-<p><img src="C:%5CUsers%5Cxb%5CAppData%5CLocal%5CTemp%5C1581484259789.png" alt="1581484259789"></p>
+<p><img src="../../../../img/20-2-12/1.png" alt></p>
 <p>使配置立即生效</p>
 <p><code>source /etc/profile</code></p>
 <h3 id="Tomcat的安装和配置"><a href="#Tomcat的安装和配置" class="headerlink" title="Tomcat的安装和配置"></a>Tomcat的安装和配置</h3><p>下载 <code>apache-tomcat-8.5.50.tar.gz</code> 传到kali下 <code>/usr/local/xb</code></p>
 <p>官网下载地址  <a href="http://tomcat.apache.org/download-80.cgi" target="_blank" rel="noopener">http://tomcat.apache.org/download-80.cgi</a> </p>
-<p><img src="C:%5CUsers%5Cxb%5CAppData%5CLocal%5CTemp%5C1581485078404.png" alt="1581485078404"></p>
+<p><img src="../../../../img/20-2-12/2.png" alt></p>
 <p>解压并重命名文件</p>
 <p><code>tar zxvf apache-tomcat-8.5.50.tar.gz</code><br><code>mv apache-tomcat-8.5.50  tomcat8.5.50</code></p>
 <p>编辑配置文件 <code>etc/profile</code>  </p>
@@ -332,6 +333,7 @@
 <h3 id="启动Tomcat服务"><a href="#启动Tomcat服务" class="headerlink" title="启动Tomcat服务"></a>启动Tomcat服务</h3><p><code>./tomcat8.5.50/bin/startup.sh</code></p>
 <h3 id="关闭Tomcat服务"><a href="#关闭Tomcat服务" class="headerlink" title="关闭Tomcat服务"></a>关闭Tomcat服务</h3><p><code>./tomcat8.5.50/bin/shutdown.sh</code></p>
 <h3 id="tomcat根目录"><a href="#tomcat根目录" class="headerlink" title="tomcat根目录"></a>tomcat根目录</h3><p><code>tomcat8.5.50/webapps/ROOT</code></p>
+<p><img src="../../../../img/20-2-12/3.png" alt></p>
 
       
     </div>
