@@ -87,6 +87,7 @@
 <meta property="og:site_name" content="Assassins 小白">
 <meta property="og:description" content="所有的嫉妒都只是因为你没出息">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/1588607187.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/image-20200503201005710.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/image-20200503201122771.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/image-20200503202007986.png">
@@ -97,11 +98,11 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/image-20200503255317559.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/image-20200503203057084.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/image-20200503203816780.png">
-<meta property="og:updated_time" content="2020-05-03T15:56:20.802Z">
+<meta property="og:updated_time" content="2020-05-04T15:49:28.933Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="taobao Waf Bypass">
 <meta name="twitter:description" content="所有的嫉妒都只是因为你没出息">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/image-20200503201005710.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/1588607187.jpg">
 
 
 
@@ -315,18 +316,21 @@
 <hr>
 <a id="more"></a>
 
-<p>参数from存在xss</p>
+<p>发现参数from参数存在xss</p>
+<p>PS：我之前测搜狗的时候发现搜狗主站from这个参数也是存在xss，现在已经忽略，并修复 -_-</p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/1588607187.jpg" alt></p>
+<p>回归正题，，回归正题，看下边</p>
 <p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/image-20200503201005710.png" alt></p>
-<p>成功解析</p>
+<p>发现解析了img标签</p>
 <p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/image-20200503201122771.png" alt></p>
-<p>Fuzz：</p>
+<p>开始尝试Fuzz：</p>
 <p>&lt;img/src=a onerror&gt;  不拦截</p>
 <p>&lt;img/src=a onerror=&gt;  拦截</p>
 <p>&lt;img/src=a alert&gt;  不拦截</p>
 <p>&lt;img/src=a alert()&gt;  拦截</p>
 <hr>
-<p>emmm，不想测了，换标签</p>
-<p>换了一堆payload，，都拦的死死的</p>
+<p>尝试失败，不想测img了，换标签</p>
+<p>换了一堆payload，，但是都被waf都拦的死死的</p>
 <p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/image-20200503202007986.png" alt></p>
 <p>然后在Twitter上面看到这个payload，复制过来试试</p>
 <p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/image-20200503202317559.png" alt></p>
@@ -344,8 +348,8 @@
 <p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/image-20200503203057084.png" alt></p>
 <p>发现双引号给转义了，那把双引号去掉加单引号</p>
 <p>虽然单引号没有被转义，但是发现并不能弹窗</p>
-<p>然后我去洗了个澡，冷静冷静</p>
-<p>洗完回来在后面加了个 <code>&lt;!--</code> ，，发现就弹了</p>
+<p>然后我去跟古天乐渣渣辉玩了一会儿贪玩蓝月，，</p>
+<p>回来后可能精神有点不太正常，突发奇想在后面加了个 <code>&lt;!--</code> ，，就弹了</p>
 <p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/image-20200503203816780.png" alt></p>
 
       
