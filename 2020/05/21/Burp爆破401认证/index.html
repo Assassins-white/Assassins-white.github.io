@@ -79,21 +79,29 @@
 
 
 
-<meta name="description" content="生活比电影狠多了，从来不给弱者安排大逆转的情节">
+<meta name="description" content="每天认真做好自己该做的事：多读书，按时睡觉，保持善良，怀有爱心">
 <meta name="keywords" content="WEB安全|黑客技术|渗透测试|黑盒测试|网络安全">
 <meta property="og:type" content="article">
-<meta property="og:title" content="BurpSuite自动化检测CORS漏洞">
-<meta property="og:url" content="http://yoursite.com/2020/03/11/BurpSuite自动化检测CORS漏洞/index.html">
+<meta property="og:title" content="Burp爆破401认证">
+<meta property="og:url" content="http://yoursite.com/2020/05/21/Burp爆破401认证/index.html">
 <meta property="og:site_name" content="Assassins 小白">
-<meta property="og:description" content="生活比电影狠多了，从来不给弱者安排大逆转的情节">
+<meta property="og:description" content="每天认真做好自己该做的事：多读书，按时睡觉，保持善良，怀有爱心">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/img/20-3-11/1.png">
-<meta property="og:image" content="http://yoursite.com/img/20-3-11/2.png">
-<meta property="og:updated_time" content="2020-03-11T14:16:49.047Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200521132042.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200521153629.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200521153809.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200521154013.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200521154903.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200521155152.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200521155314.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200521155452.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200521155558.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200521155857.png">
+<meta property="og:updated_time" content="2020-05-21T08:00:28.782Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BurpSuite自动化检测CORS漏洞">
-<meta name="twitter:description" content="生活比电影狠多了，从来不给弱者安排大逆转的情节">
-<meta name="twitter:image" content="http://yoursite.com/img/20-3-11/1.png">
+<meta name="twitter:title" content="Burp爆破401认证">
+<meta name="twitter:description" content="每天认真做好自己该做的事：多读书，按时睡觉，保持善良，怀有爱心">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200521132042.png">
 
 
 
@@ -123,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/03/11/BurpSuite自动化检测CORS漏洞/">
+  <link rel="canonical" href="http://yoursite.com/2020/05/21/Burp爆破401认证/">
 
 
 
 
 
-  <title>BurpSuite自动化检测CORS漏洞 | Assassins 小白</title>
+  <title>Burp爆破401认证 | Assassins 小白</title>
   
 
 
@@ -236,7 +244,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/11/BurpSuite自动化检测CORS漏洞/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/21/Burp爆破401认证/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Assassins 小白">
@@ -253,7 +261,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">BurpSuite自动化检测CORS漏洞</h1>
+          <h1 class="post-title" itemprop="name headline">Burp爆破401认证</h1>
         
 
         <div class="post-meta">
@@ -265,8 +273,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-11T21:44:49+08:00">
-                2020-03-11
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-21T13:16:12+08:00">
+                2020-05-21
               </time>
             
 
@@ -303,15 +311,29 @@
       
 
       
-        <p>生活比电影狠多了，从来不给弱者安排大逆转的情节 </p>
+        <p>每天认真做好自己该做的事：多读书，按时睡觉，保持善良，怀有爱心</p>
+<hr>
 <a id="more"></a>
 
-<hr>
-<p>BurpSuite的 <code>Match and Replace</code> 如下图设置</p>
-<p><img src="../../../../img/20-3-11/1.png" alt></p>
-<p>然后就会自动 加上/替换 Origin头为 <code>foo.example.org</code></p>
-<p><img src="../../../../img/20-3-11/2.png" alt></p>
-<p>然后再寻找返回头里面存在 <code>Origin: foo.example.org</code> 的就可以了，可以使用search</p>
+<p>401认证界面</p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200521132042.png" alt></p>
+<p>Burp抓包，账号密码在 <code>Authorization</code> 头里面</p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200521153629.png" alt></p>
+<p>放到 <code>Decoder</code> 模块进行base64解密就可以看到明文密码</p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200521153809.png" alt></p>
+<p>发送到 <code>intruder</code> 模块，设置爆破</p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200521154013.png" alt></p>
+<p>payload设置自定义，第一个位置载入用户名字典</p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200521154903.png" alt></p>
+<p>第二个位置，设置冒号(:)分隔符</p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200521155152.png" alt></p>
+<p>第三个位置，设置密码字典</p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200521155314.png" alt></p>
+<p>然后设置base64编码</p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200521155452.png" alt></p>
+<p>把URL编码去掉</p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200521155558.png" alt></p>
+<h4 id="Start-Attack"><a href="#Start-Attack" class="headerlink" title="Start Attack"></a>Start Attack</h4><p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200521155857.png" alt></p>
 
       
     </div>
@@ -336,8 +358,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/02/28/利用JavaScript自动提交CSRF表单/" rel="next" title="利用JavaScript自动提交CSRF表单">
-                <i class="fa fa-chevron-left"></i> 利用JavaScript自动提交CSRF表单
+              <a href="/2020/05/13/HFish存在通用Xss【0day】/" rel="next" title="HFish存在通用Xss【0day】">
+                <i class="fa fa-chevron-left"></i> HFish存在通用Xss【0day】
               </a>
             
           </div>
@@ -345,10 +367,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/03/29/crawlergo联动xray对接企业微信实现自动化日站一条龙/" rel="prev" title="crawlergo联动xray对接企业微信实现自动化日站一条龙">
-                crawlergo联动xray对接企业微信实现自动化日站一条龙 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -400,8 +418,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -476,6 +503,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Start-Attack"><span class="nav-number">1.</span> <span class="nav-text">Start Attack</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
