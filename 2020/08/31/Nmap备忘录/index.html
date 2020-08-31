@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Assassins 小白">
 <meta property="og:description" content="如果快乐太难，那祝你百事可乐">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-08-31T09:44:13.797Z">
+<meta property="og:updated_time" content="2020-08-31T09:52:24.132Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nmap备忘录">
 <meta name="twitter:description" content="如果快乐太难，那祝你百事可乐">
@@ -306,7 +306,7 @@
 
 <center><h1>Nmap备忘录</h1></center>
 
-<h3 id="目标规格"><a href="#目标规格" class="headerlink" title="目标规格"></a>目标规格</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">			nmap 192.168.1.1					扫描一个IP</span><br><span class="line">			nmap 192.168.1.1 192.168.2.1		扫描IP段</span><br><span class="line">			nmap 192.168.1.1-254				扫描一个范围</span><br><span class="line">			nmap nmap.org						扫描一个域名</span><br><span class="line">			nmap 192.168.1.0/24					使用CIDR表示法扫描</span><br><span class="line">-iL			nmap -iL target.txt					扫描文件中的目标</span><br><span class="line">-iR			nmap -iR 100						扫描100个随机主机</span><br><span class="line">--exclude	nmap --exclude 192.168.1.1			排除列出的主机</span><br></pre></td></tr></table></figure>
+<h3 id="目标规格"><a href="#目标规格" class="headerlink" title="目标规格"></a>目标规格</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">			nmap 192.168.1.1				扫描一个IP</span><br><span class="line">			nmap 192.168.1.1 192.168.2.1	扫描IP段</span><br><span class="line">			nmap 192.168.1.1-254			扫描一个范围</span><br><span class="line">			nmap nmap.org					扫描一个域名</span><br><span class="line">			nmap 192.168.1.0/24				使用CIDR表示法扫描</span><br><span class="line">-iL			nmap -iL target.txt				扫描文件中的目标</span><br><span class="line">-iR			nmap -iR 100					扫描100个随机主机</span><br><span class="line">--exclude	nmap --exclude 192.168.1.1		排除列出的主机</span><br></pre></td></tr></table></figure>
 
 <hr>
 <h3 id="扫描手法"><a href="#扫描手法" class="headerlink" title="扫描手法"></a>扫描手法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-sS			nmap 192.168.1.1 -sS		TCP SYN端口扫描(有root权限默认)</span><br><span class="line">-sT			nmap 192.168.1.1 -sT		TCP连接端口扫描(没有root权限默认)</span><br><span class="line">-sU			nmap 192.168.1.1 -sU		UDP端口扫描</span><br><span class="line">-sA			nmap 192.168.1.1 -sA		TCP ACK端口扫描</span><br><span class="line">-sW			nmap 192.168.1.1 -sW		滑动窗口扫描</span><br><span class="line">-sM			nmap 192.168.1.1 -sM		TCP Maimon扫描</span><br></pre></td></tr></table></figure>
