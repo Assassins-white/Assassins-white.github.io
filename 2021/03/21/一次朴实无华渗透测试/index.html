@@ -79,24 +79,30 @@
 
 
 
-<meta name="description" content="不起跬步，无以至千里；不积小流，无以成江海">
+<meta name="description" content="远赴人间惊鸿宴，一睹人间盛世颜">
 <meta name="keywords" content="WEB安全|黑客技术|渗透测试|黑盒测试|网络安全">
 <meta property="og:type" content="article">
-<meta property="og:title" content="WordPress拒绝服务攻击复现(CVE-2018-6389)">
-<meta property="og:url" content="http://yoursite.com/2020/02/14/WordPress拒绝服务攻击复现-CVE-2018-6389/index.html">
+<meta property="og:title" content="一次朴实无华渗透测试">
+<meta property="og:url" content="http://yoursite.com/2021/03/21/一次朴实无华渗透测试/index.html">
 <meta property="og:site_name" content="Assassins 小白">
-<meta property="og:description" content="不起跬步，无以至千里；不积小流，无以成江海">
+<meta property="og:description" content="远赴人间惊鸿宴，一睹人间盛世颜">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/img/20-2-1402/1.png">
-<meta property="og:image" content="http://yoursite.com/img/20-2-1402/2.png">
-<meta property="og:image" content="http://yoursite.com/img/20-2-1402/3.png">
-<meta property="og:image" content="http://yoursite.com/img/20-2-1402/4.png">
-<meta property="og:image" content="http://yoursite.com/img/20-2-1402/5.png">
-<meta property="og:updated_time" content="2020-05-01T15:28:52.000Z">
+<meta property="og:image" content="http://yoursite.com/img/21-3-21_2/1.png">
+<meta property="og:image" content="http://yoursite.com/img/21-3-21_2/2.png">
+<meta property="og:image" content="http://yoursite.com/img/21-3-21_2/3.png">
+<meta property="og:image" content="http://yoursite.com/img/21-3-21_2/4.png">
+<meta property="og:image" content="http://yoursite.com/img/21-3-21_2/5.png">
+<meta property="og:image" content="http://yoursite.com/img/21-3-21_2/6.png">
+<meta property="og:image" content="http://yoursite.com/img/21-3-21_2/7.png">
+<meta property="og:image" content="http://yoursite.com/img/21-3-21_2/8.png">
+<meta property="og:image" content="http://yoursite.com/img/21-3-21_2/9.png">
+<meta property="og:image" content="http://yoursite.com/img/21-3-21_2/10.png">
+<meta property="og:image" content="http://yoursite.com/img/21-3-21_2/11.png">
+<meta property="og:updated_time" content="2021-03-21T15:22:11.101Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="WordPress拒绝服务攻击复现(CVE-2018-6389)">
-<meta name="twitter:description" content="不起跬步，无以至千里；不积小流，无以成江海">
-<meta name="twitter:image" content="http://yoursite.com/img/20-2-1402/1.png">
+<meta name="twitter:title" content="一次朴实无华渗透测试">
+<meta name="twitter:description" content="远赴人间惊鸿宴，一睹人间盛世颜">
+<meta name="twitter:image" content="http://yoursite.com/img/21-3-21_2/1.png">
 
 
 
@@ -126,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/02/14/WordPress拒绝服务攻击复现-CVE-2018-6389/">
+  <link rel="canonical" href="http://yoursite.com/2021/03/21/一次朴实无华渗透测试/">
 
 
 
 
 
-  <title>WordPress拒绝服务攻击复现(CVE-2018-6389) | Assassins 小白</title>
+  <title>一次朴实无华渗透测试 | Assassins 小白</title>
   
 
 
@@ -239,7 +245,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/14/WordPress拒绝服务攻击复现-CVE-2018-6389/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/03/21/一次朴实无华渗透测试/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Assassins 小白">
@@ -256,7 +262,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">WordPress拒绝服务攻击复现(CVE-2018-6389)</h1>
+          <h1 class="post-title" itemprop="name headline">一次朴实无华渗透测试</h1>
         
 
         <div class="post-meta">
@@ -268,8 +274,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-14T21:47:53+08:00">
-                2020-02-14
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-03-21T23:10:51+08:00">
+                2021-03-21
               </time>
             
 
@@ -306,32 +312,33 @@
       
 
       
-        <p>不起跬步，无以至千里；不积小流，无以成江海 </p>
+        <p>远赴人间惊鸿宴，一睹人间盛世颜</p>
 <hr>
 <a id="more"></a>
 
-
-
-<p>xray开着被动扫描，发现有个爆红了</p>
-<p><img src="../../../../img/20-2-1402/1.png" alt></p>
-<p>看了看也没啥重要的东西，寻思着好不容易报个红，就看看这个站吧</p>
-<p>然后Whatweb上去扫，发现使用的CMS是wordpress ，版本是4.9.13</p>
-<p><img src="../../../../img/20-2-1402/2.png" alt></p>
-<p>之前一个朋友用wordpress的一个拒绝服务漏洞，搞了个腾讯的子站交SRC，然后我寻思这个站有没有漏洞</p>
-<p>然后就去GitHub上面搜索，发现WordPress 4.9.x版本以下都存在拒绝服务攻击，包括4.9.x</p>
-<p><img src="../../../../img/20-2-1402/3.png" alt></p>
-<p>这个站版本是 4.9.13 ，那还废啥话</p>
-<p>克隆</p>
-<p><code>git clone https://github.com/ianxtianxt/CVE-2018-6389.git</code></p>
-<p>攻击</p>
-<p><code>python doser.py -t 999 -g &#39;https://domain.com&#39;</code></p>
-<p>因为我之前执行过攻击命令，现在演示还要重新执行一遍</p>
-<p><code>history</code> 查看历史命令</p>
-<p><img src="../../../../img/20-2-1402/4.png" alt></p>
-<p>然后在命令行中，可以使用符号 <code>!</code> 执行指定序号的历史命令</p>
-<p>例如，我这里要执行第331个历史命令，则输入 <code>!331</code> 就行了</p>
-<p>没过几分钟，网站就真的被打死了，还挺好玩</p>
-<p><img src="../../../../img/20-2-1402/5.png" alt></p>
+<p>敏感目标，重码<br>后续出的文章，排版有点乱</p>
+<p>目标：<a href="https://x.x.xxx.206/owa/" target="_blank" rel="noopener">https://x.x.xxx.206/owa/</a><br>扫描C段发现 该站点有上传<br>直接上传获取一个shell</p>
+<p><img src="../../../../img/21-3-21_2/1.png" alt></p>
+<p>systeminfo</p>
+<p><img src="../../../../img/21-3-21_2/2.png" alt></p>
+<p>执行命令上线CS<br>域命令不能使用</p>
+<p><img src="../../../../img/21-3-21_2/3.png" alt></p>
+<p>收集数据库配置信息，试了几个能连接上</p>
+<p><img src="../../../../img/21-3-21_2/4.png" alt></p>
+<p>导出浏览器密码</p>
+<p><img src="../../../../img/21-3-21_2/5.png" alt></p>
+<p>打socks隧道</p>
+<p><img src="../../../../img/21-3-21_2/6.png" alt></p>
+<p>扫smb</p>
+<p><img src="../../../../img/21-3-21_2/7.png" alt></p>
+<p>192.168.2.5 为域控 机器名为xxxxxA01<br>192.168.2.4 为邮服内网IP<br>机器多为win12以上 win10,尝试批量哈希传递并没有上线的<br>直接使用CVE-2020-1472</p>
+<p><img src="../../../../img/21-3-21_2/8.png" alt></p>
+<p>pth</p>
+<p><img src="../../../../img/21-3-21_2/9.png" alt></p>
+<p>导出所有用户hash</p>
+<p><img src="../../../../img/21-3-21_2/10.png" alt></p>
+<p>补个域控密码还原</p>
+<p><img src="../../../../img/21-3-21_2/11.png" alt></p>
 
       
     </div>
@@ -356,8 +363,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/02/14/使用SSR结合BurpSuite进行抓包/" rel="next" title="使用SSR结合BurpSuite进行抓包">
-                <i class="fa fa-chevron-left"></i> 使用SSR结合BurpSuite进行抓包
+              <a href="/2021/03/21/Github博客迁移/" rel="next" title="Github博客迁移">
+                <i class="fa fa-chevron-left"></i> Github博客迁移
               </a>
             
           </div>
@@ -365,10 +372,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/02/26/对精良南方站点的一次简单测试/" rel="prev" title="对精良南方站点的一次简单测试">
-                对精良南方站点的一次简单测试 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
