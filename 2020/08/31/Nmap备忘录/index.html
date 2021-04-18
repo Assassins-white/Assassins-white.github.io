@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="WEB安全|黑客技术|渗透测试|黑盒测试|网络安全|红蓝对抗|红队攻防" />
+  <meta name="keywords" content="nmap," />
 
 
 
@@ -87,9 +87,9 @@
 <meta property="og:description" content="如果快乐太难，那祝你百事可乐">
 <meta property="og:locale">
 <meta property="article:published_time" content="2020-08-31T09:40:02.000Z">
-<meta property="article:modified_time" content="2020-10-07T05:05:20.000Z">
+<meta property="article:modified_time" content="2021-04-18T05:23:02.694Z">
 <meta property="article:author" content="Assassins 小白">
-<meta property="article:tag" content="WEB安全|黑客技术|渗透测试|黑盒测试|网络安全|红蓝对抗|红队攻防|内网渗透">
+<meta property="article:tag" content="nmap">
 <meta name="twitter:card" content="summary">
 
 
@@ -336,34 +336,49 @@
       
         <p>如果快乐太难，那祝你百事可乐</p>
 <hr>
-<a id="more"></a>
+<span id="more"></span>
 
 <center><h1>Nmap备忘录</h1></center>
 
-<h3 id="目标规格"><a href="#目标规格" class="headerlink" title="目标规格"></a>目标规格</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">			nmap 192.168.1.1					扫描一个IP</span><br><span class="line">			nmap 192.168.1.1 192.168.2.1		扫描IP段</span><br><span class="line">			nmap 192.168.1.1-254				扫描一个范围</span><br><span class="line">			nmap nmap.org						扫描一个域名</span><br><span class="line">			nmap 192.168.1.0/24					使用CIDR表示法扫描</span><br><span class="line">-iL			nmap -iL target.txt					扫描文件中的目标</span><br><span class="line">-iR			nmap -iR 100						扫描100个随机主机</span><br><span class="line">--exclude	nmap --exclude 192.168.1.1			排除列出的主机</span><br></pre></td></tr></table></figure>
+<h3 id="目标规格"><a href="#目标规格" class="headerlink" title="目标规格"></a>目标规格</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">			nmap 192.168.1.1					扫描一个IP</span><br><span class="line">			nmap 192.168.1.1 192.168.2.1		扫描IP段</span><br><span class="line">			nmap 192.168.1.1-254				扫描一个范围</span><br><span class="line">			nmap nmap.org						扫描一个域名</span><br><span class="line">			nmap 192.168.1.0&#x2F;24					使用CIDR表示法扫描</span><br><span class="line">-iL			nmap -iL target.txt					扫描文件中的目标</span><br><span class="line">-iR			nmap -iR 100						扫描100个随机主机</span><br><span class="line">--exclude	nmap --exclude 192.168.1.1			排除列出的主机</span><br></pre></td></tr></table></figure>
+
 
 <hr>
 <h3 id="扫描手法"><a href="#扫描手法" class="headerlink" title="扫描手法"></a>扫描手法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-sS			nmap 192.168.1.1 -sS		TCP SYN端口扫描(有root权限默认)</span><br><span class="line">-sT			nmap 192.168.1.1 -sT		TCP连接端口扫描(没有root权限默认)</span><br><span class="line">-sU			nmap 192.168.1.1 -sU		UDP端口扫描</span><br><span class="line">-sA			nmap 192.168.1.1 -sA		TCP ACK端口扫描</span><br><span class="line">-sW			nmap 192.168.1.1 -sW		滑动窗口扫描</span><br><span class="line">-sM			nmap 192.168.1.1 -sM		TCP Maimon扫描</span><br></pre></td></tr></table></figure>
 
+
+
 <hr>
-<h3 id="主机发现"><a href="#主机发现" class="headerlink" title="主机发现"></a>主机发现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-sL			nmap 192.168.1.1-3 -sL				不扫描,仅列出目标</span><br><span class="line">-sn			nmap 192.168.1.1/24 -sn				禁用端口扫描</span><br><span class="line">-Pn			nmap 192.168.1.1-5 -Pn				跳过主机发现,直接扫描端口</span><br><span class="line">-PS			nmap 192.168.1.1-5 -PS22-25,80		端口X上的TCP SYN发现,默认80</span><br><span class="line">-PA			nmap 192.168.1.1-5 -PA22-25,80		端口X上的TCP ACK发现,默认80</span><br><span class="line">-PU			nmap 192.168.1.1-5 -PU53			端口X上的UDP发现,默认40125</span><br><span class="line">-PR			nmap 192.168.1.1/24 -PR				本地网络上的ARP发现</span><br><span class="line">-n			nmap 192.168.1.1 -n					不做DNS解析</span><br></pre></td></tr></table></figure>
+<h3 id="主机发现"><a href="#主机发现" class="headerlink" title="主机发现"></a>主机发现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-sL			nmap 192.168.1.1-3 -sL				不扫描,仅列出目标</span><br><span class="line">-sn			nmap 192.168.1.1&#x2F;24 -sn				禁用端口扫描</span><br><span class="line">-Pn			nmap 192.168.1.1-5 -Pn				跳过主机发现,直接扫描端口</span><br><span class="line">-PS			nmap 192.168.1.1-5 -PS22-25,80		端口X上的TCP SYN发现,默认80</span><br><span class="line">-PA			nmap 192.168.1.1-5 -PA22-25,80		端口X上的TCP ACK发现,默认80</span><br><span class="line">-PU			nmap 192.168.1.1-5 -PU53			端口X上的UDP发现,默认40125</span><br><span class="line">-PR			nmap 192.168.1.1&#x2F;24 -PR				本地网络上的ARP发现</span><br><span class="line">-n			nmap 192.168.1.1 -n					不做DNS解析</span><br></pre></td></tr></table></figure>
+
+
 
 <hr>
 <h3 id="端口规格"><a href="#端口规格" class="headerlink" title="端口规格"></a>端口规格</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-p			 nmap 192.168.1.1 -p 21				   扫描特定端口</span><br><span class="line">-p			 nmap 192.168.1.1 -p 21-100			   扫描端口范围</span><br><span class="line">-p			 nmap 192.168.1.1 -p U:53,T:21-25,80   扫描多个TCP和UDP端口</span><br><span class="line">-p-			 nmap 192.168.1.1 -p-				   扫描所有端口</span><br><span class="line">-p			 nmap 192.168.1.1 -p http,https		   基于服务名称的端口扫描</span><br><span class="line">-F			 nmap 192.168.1.1 -F				   快速扫描(100个端口)</span><br><span class="line">--top-ports  nmap 192.168.1.1 --top-ports 2000 	   扫描前2000个端口</span><br><span class="line">-p-65535     nmap 192.168.1.1 -p-65535			   从端口1开始扫描</span><br></pre></td></tr></table></figure>
 
+
+
 <hr>
 <h3 id="时间和性能"><a href="#时间和性能" class="headerlink" title="时间和性能"></a>时间和性能</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-T0 	nmap 192.168.1.1 -T0 	妄想症,非常非常慢，用于IDS逃逸</span><br><span class="line">-T1 	nmap 192.168.1.1 -T1	猥琐的,相当慢，用于IDS逃逸</span><br><span class="line">-T2 	nmap 192.168.1.1 -T2	礼貌的,降低速度以消耗更小的带宽，比默认慢十倍</span><br><span class="line">-T3 	nmap 192.168.1.1 -T3	正常的,默认，根据目标的反应自动调整时间模式</span><br><span class="line">-T4 	nmap 192.168.1.1 -T4	野蛮的,在一个很好的网络环境，请求可能会淹没目标</span><br><span class="line">-T5 	nmap 192.168.1.1 -T5	疯狂的,很可能会淹没目标端口或是漏掉一些开放端口</span><br></pre></td></tr></table></figure>
 
-<hr>
-<h3 id="NSE脚本"><a href="#NSE脚本" class="headerlink" title="NSE脚本"></a>NSE脚本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">nmap 192.168.1.1 -sC 						使用默认的NSE脚本进行扫描</span><br><span class="line">nmap 192.168.1.1 --script=banner			使用单个脚本扫描,banner示例</span><br><span class="line">nmap 192.168.1.1 --script=http,banner  		使用两个脚本扫描,示例http,banner</span><br><span class="line">nmap 192.168.1.1 --script=http*				使用通配符扫描,http示例</span><br><span class="line">nmap 192.168.1.1 --script &quot;not intrusive&quot;	扫描默认值,删除侵入性脚本</span><br><span class="line">nmap 192.168.1.1 --script=smb-vuln*			扫描所有smb漏洞</span><br><span class="line">nmap 192.168.1.1 --script=vuln				扫描常见漏洞</span><br></pre></td></tr></table></figure>
+
 
 <hr>
-<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">nmap 192.168.1.1 -v 				 增加详细程度,-vv效果更好</span><br><span class="line">nmap 192.168.1.1 -oN test.txt		 标准输出写入到指定文件中</span><br><span class="line">nmap 192.168.1.1 -oX test.xml		 将输入写成xml的形式</span><br><span class="line">nmap 192.168.1.1 -oG grep.txt		 将输出写成特殊格式</span><br><span class="line">nmap 192.168.1.1 -oA results		 将输出所有格式,有三种 .xml/.gnmap/.nmap</span><br><span class="line">nmap 192.168.1.1 --open 			 仅显示开放的端口</span><br><span class="line">nmap 192.168.1.1 -T4 --packet-trace  显示所有发送和接收的数据包</span><br><span class="line">nmap --resume test.txt				 恢复扫描，配合-oG等命令使用</span><br></pre></td></tr></table></figure>
+<h3 id="NSE脚本"><a href="#NSE脚本" class="headerlink" title="NSE脚本"></a>NSE脚本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">nmap 192.168.1.1 -sC 						使用默认的NSE脚本进行扫描</span><br><span class="line">nmap 192.168.1.1 --script&#x3D;banner			使用单个脚本扫描,banner示例</span><br><span class="line">nmap 192.168.1.1 --script&#x3D;http,banner  		使用两个脚本扫描,示例http,banner</span><br><span class="line">nmap 192.168.1.1 --script&#x3D;http*				使用通配符扫描,http示例</span><br><span class="line">nmap 192.168.1.1 --script &quot;not intrusive&quot;	扫描默认值,删除侵入性脚本</span><br><span class="line">nmap 192.168.1.1 --script&#x3D;smb-vuln*			扫描所有smb漏洞</span><br><span class="line">nmap 192.168.1.1 --script&#x3D;vuln				扫描常见漏洞</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">nmap 192.168.1.1 -v 				 增加详细程度,-vv效果更好</span><br><span class="line">nmap 192.168.1.1 -oN test.txt		 标准输出写入到指定文件中</span><br><span class="line">nmap 192.168.1.1 -oX test.xml		 将输入写成xml的形式</span><br><span class="line">nmap 192.168.1.1 -oG grep.txt		 将输出写成特殊格式</span><br><span class="line">nmap 192.168.1.1 -oA results		 将输出所有格式,有三种 .xml&#x2F;.gnmap&#x2F;.nmap</span><br><span class="line">nmap 192.168.1.1 --open 			 仅显示开放的端口</span><br><span class="line">nmap 192.168.1.1 -T4 --packet-trace  显示所有发送和接收的数据包</span><br><span class="line">nmap --resume test.txt				 恢复扫描，配合-oG等命令使用</span><br></pre></td></tr></table></figure>
+
+
 
 <hr>
 <h3 id="服务和版本检测"><a href="#服务和版本检测" class="headerlink" title="服务和版本检测"></a>服务和版本检测</h3><ul>
 <li><p><code>nmap 192.168.1.1 -sV</code></p>
-<pre><code>* 尝试确定端口上运行的服务的版本</code></pre></li>
+<pre><code>* 尝试确定端口上运行的服务的版本
+</code></pre>
+</li>
 <li><p><code>nmap 192.168.1.1 -sV --version-intensity 8</code></p>
 <ul>
 <li>强度级别0到9，数字越大，正确性越强，默认值为7</li>
@@ -374,7 +389,7 @@
 <li>轻量级版本扫描，使扫描进程加快，但它识别服务的正确率降低</li>
 </ul>
 </li>
-<li><p><code>nmap 192.168.1.1 -sV --version-all</code></p>
+<li><p><code>nmap 192.168.1.1 -sV --version-all </code></p>
 <ul>
 <li>version-all相当于version-intensity的最高级别9，保证对每个端口尝试每个探测报文</li>
 </ul>
@@ -402,7 +417,7 @@
 <li>报文分段，请求的扫描(包括ping扫描)使用微小的碎片IP数据包, 包过滤器检测更难</li>
 </ul>
 </li>
-<li><p><code>nmap 192.168.1.1 --mtu 32</code></p>
+<li><p><code>nmap 192.168.1.1 --mtu 32 </code></p>
 <ul>
 <li>利用数据包分片技术，某些防火墙为了加快处理速度而不会进行重组处理，这样从而逃脱防火墙或闯入检测系统的检测,注意:mtu的值必须是 8 的倍数(如8,16,24,32等)</li>
 </ul>
@@ -474,6 +489,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/nmap/" rel="tag"># nmap</a>
+          
+        </div>
       
 
       
@@ -590,7 +611,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">61</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>

@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="WEB安全|黑客技术|渗透测试|黑盒测试|网络安全|红蓝对抗|红队攻防" />
+  <meta name="keywords" content="BurpSuite,Token," />
 
 
 
@@ -105,9 +105,10 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007132320.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007132403.png">
 <meta property="article:published_time" content="2019-02-22T05:04:41.000Z">
-<meta property="article:modified_time" content="2020-10-07T05:25:10.000Z">
+<meta property="article:modified_time" content="2021-04-18T05:26:29.680Z">
 <meta property="article:author" content="Assassins 小白">
-<meta property="article:tag" content="WEB安全|黑客技术|渗透测试|黑盒测试|网络安全|红蓝对抗|红队攻防|内网渗透">
+<meta property="article:tag" content="BurpSuite">
+<meta property="article:tag" content="Token">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007130919.png">
 
@@ -355,12 +356,12 @@
       
         <p>你比日落还要温柔</p>
 <hr>
-<a id="more"></a>
+<span id="more"></span>
 
 <p>一个登陆框</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007130919.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007130919.png"></p>
 <p>载入burpsuite尝试爆破</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007130937.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007130937.png"></p>
 <p>发现POST数据里面有token</p>
 <blockquote>
 <p>token的作用主要有两个</p>
@@ -369,37 +370,37 @@
 <p>可以防止暴力枚举，还能防止CSRF等攻击，用token作为参数去加密请求信息，每次请求都具有唯一性，csrf攻击将不成立，除非攻击者能预知到你的token值</p>
 </blockquote>
 <p>这样直接爆破行不通了</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007131054.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007131054.png"></p>
 <p>继续发掘，发现token是前端赋值</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007131136.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007131136.png"></p>
 <p>这里我们利用burpsuite宏，制作一个获取页面里token的宏，在每次爆破之前，先运行一次宏，获取到新的有效token</p>
 <p>点击burpsuite的 <code>Project Options</code> 模块，再进入下面的 <code>Sessions</code> 子模块，在 <code>Macros</code> 下 <code>add</code> 添加一个宏</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007131251.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007131251.png"></p>
 <p>然后在弹出来的界面中，选择获取token值的页面，点OK</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007131358.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007131358.png"></p>
 <p>进入宏编辑界面，输入宏的名字，然后点击右边的 <code>Configure item</code></p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007131432.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007131432.png"></p>
 <p>宏设置页面，指定参数的位置，点击 <code>add</code> 添加参数</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007131503.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007131503.png"></p>
 <p>输入参数名称，选择token的位置，在 <code>configure Macro Item</code> 、<code>Macro Editor</code> 全部点击确定，完成宏的录制</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007131550.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007131550.png"></p>
 <p>可以在 <code>Macros</code> 列表看到刚才录制的宏</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007131636.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007131636.png"></p>
 <p>在会话处理规则处，点击add，添加一条新规则</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007131655.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007131655.png"></p>
 <p>填写规则描述，添加一个动作，在请求之前运行一个宏</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007132134.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007132134.png"></p>
 <p>在弹出来的界面中，选择刚才录制的宏，选择值更新指定的参数，输入请求包的token名</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007132212.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007132212.png"></p>
 <p>编辑完成后，回到会话操作规则编辑界面，选择 <code>Scope</code>，设置这个宏的作用域</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007132236.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007132236.png"></p>
 <p>完成上述操作后，会话处理规则列表中有了新增的规则</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007132301.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007132301.png"></p>
 <p>我们现在来验证一下规则是否生效，再使用Intrude模块进行爆破，发现每次提交请求后，token的值都会自动更新</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007132327.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007132320.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007132327.png"></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007132320.png"></p>
 <p>爆破成功</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007132403.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007132403.png"></p>
 
       
     </div>
@@ -414,6 +415,14 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/BurpSuite/" rel="tag"># BurpSuite</a>
+          
+            <a href="/tags/Token/" rel="tag"># Token</a>
+          
+        </div>
       
 
       
@@ -521,7 +530,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">61</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>

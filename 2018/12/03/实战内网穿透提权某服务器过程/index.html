@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="WEB安全|黑客技术|渗透测试|黑盒测试|网络安全|红蓝对抗|红队攻防" />
+  <meta name="keywords" content="内网渗透,提权," />
 
 
 
@@ -113,9 +113,10 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007135221.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007135249.png">
 <meta property="article:published_time" content="2018-12-03T05:27:13.000Z">
-<meta property="article:modified_time" content="2020-10-07T06:00:00.000Z">
+<meta property="article:modified_time" content="2021-04-18T05:28:09.574Z">
 <meta property="article:author" content="Assassins 小白">
-<meta property="article:tag" content="WEB安全|黑客技术|渗透测试|黑盒测试|网络安全|红蓝对抗|红队攻防|内网渗透">
+<meta property="article:tag" content="内网渗透">
+<meta property="article:tag" content="提权">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007133450.png">
 
@@ -363,73 +364,73 @@
       
         <p>三分热度，七分孤独</p>
 <hr>
-<a id="more"></a>
+<span id="more"></span>
 
 <p>访问手机站点，注册账户</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007133450.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007133450.png"></p>
 <p>点击头像上传，Burpsuite开启抓包，图片能正常上传，并返回上传路径</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007133529.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007133529.png"></p>
 <p>测试是否有上传漏洞，更改图片内容为aspx一句话，然后发现能够上传成功，没有判断文件内容</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007133652.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007133652.png"></p>
 <p>然后再试着改文件后缀，发现它对文件后缀名没有任何过滤，可以直接上传aspx文件</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007133730.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007133730.png"></p>
 <p>用菜刀连接我们上传的一句话</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007133754.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007133754.png"></p>
 <p>连接成功</p>
 <p>然后我们在虚拟终端看看服务器的情况</p>
 <p><code>whoami</code> 查看当前权限</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007133822.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007133822.png"></p>
 <p><code>systeminfo</code> 查看服务器的系统信息</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007133854.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007133854.png"></p>
 <p><code>2008 R2 Enterprise 64</code> 系统，打了两个补丁：<code>KB958488</code>，<code>KB976902</code> ，理论秒提</p>
 <p><code>ipconfig /all</code> 查看服务器的网卡信息</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007134057.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007134057.png"></p>
 <p>服务器在内网</p>
 <p><code>netstat -an</code> 查看服务器端口情况,</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007134131.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007134131.png"></p>
 <p>3389远程服务端口开放</p>
 <p>试着执行命令，添加一个用户</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007134211.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007134211.png"></p>
 <p>提示系统错误，拒绝访问，说明我们现在的权限还不够</p>
 <p>用菜刀上传一个08的本地提权exp程序到服务器，然后再用虚拟终端执行命令</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007134328.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007134328.png"></p>
 <p>现在看到已经是system权限了</p>
 <p>创建用户，并提升到administrators组</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007134350.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007134350.png"></p>
 <p>现在我们已经在服务器上面创建了一个名字为xb的管理员用户</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007134405.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007134405.png"></p>
 <p>Ok，现在我们有了服务器的管理员账号，服务器也开了远程3389端口，唯一的问题就是服务器在内网，我们需要把它转发出来</p>
 <p> 我用的工具是 <code>reGeorg+Proxifier</code></p>
 <p>先上传一个 <code>reGeorg</code> 的代理脚本到服务器上面</p>
 <p>然后浏览器访问我们上传的代理脚本，效果如下图：</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007134516.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007134516.png"></p>
 <p>以上就说明脚本运行正常，然后我们去Proxifier里面配置</p>
 <p> 运行 <code>Proxifier</code> 软件，<code>配置文件</code> –&gt; <code>代理服务器</code></p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007134559.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007134559.png"></p>
 <p>添加代理服务器</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007134621.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007134621.png"></p>
 <p>地址写127.0.0.1，端口写一个未占用的端口，协议选择SOCKS5，填写完成点确定</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007134638.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007134638.png"></p>
 <p>然后代理服务器里面就多出来了一个我们刚刚添加的代理服务器，确定</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007134659.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007134659.png"></p>
 <p>再点击 <code>配置文件</code> –&gt; <code>代理规则</code></p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007134721.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007134721.png"></p>
 <p>选择添加一项规则</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007134737.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007134737.png"></p>
 <p>名称随便写，应用程序那里，选择python，目标主机和目标端口都任意，动作选Direct，然后点确定</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007134805.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007134805.png"></p>
 <p>如下图这样就可以了</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007135055.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007135055.png"></p>
 <p>运行reGeorg监听 <code>6666</code> 端口：</p>
 <p><code>reGeorgSocksProxy.py -p 6666 -u http://xxx.xxx.xxx/tunnel.aspx</code></p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007135111.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007135111.png"></p>
 <p>这样就是成功了</p>
 <p>然后选择 <code>mstsc</code> –&gt; <code>右键</code> –&gt; <code>Proxifier</code> –&gt; <code>proxy SOCKS5 127.0.0.1</code></p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007135153.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007135153.png"></p>
 <p>打开远程链接，输入服务器的内网IP和端口</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007135221.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007135221.png"></p>
 <p>输入我们创建的账号密码连上去就可以了</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007135249.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201007135249.png"></p>
 
       
     </div>
@@ -444,6 +445,14 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/" rel="tag"># 内网渗透</a>
+          
+            <a href="/tags/%E6%8F%90%E6%9D%83/" rel="tag"># 提权</a>
+          
+        </div>
       
 
       
@@ -547,7 +556,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">61</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>

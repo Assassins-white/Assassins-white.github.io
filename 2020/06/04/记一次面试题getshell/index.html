@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="WEB安全|黑客技术|渗透测试|黑盒测试|网络安全|红蓝对抗|红队攻防" />
+  <meta name="keywords" content="Getshell，面试题," />
 
 
 
@@ -97,9 +97,9 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200604114002.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200604114209.png">
 <meta property="article:published_time" content="2020-06-04T02:27:09.000Z">
-<meta property="article:modified_time" content="2020-06-04T05:36:26.000Z">
+<meta property="article:modified_time" content="2021-04-18T05:28:37.089Z">
 <meta property="article:author" content="Assassins 小白">
-<meta property="article:tag" content="WEB安全|黑客技术|渗透测试|黑盒测试|网络安全|红蓝对抗|红队攻防|内网渗透">
+<meta property="article:tag" content="Getshell，面试题">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200604105906.png">
 
@@ -347,32 +347,32 @@
       
         <p>欲买桂花同载酒，终不似，少年游</p>
 <hr>
-<a id="more"></a>
+<span id="more"></span>
 
 <p>网站首页如下，通过路径得知使用的使用的eShop程序搭建，通过faction.ico图标得知中间件是Apache Tomcat，使用的脚本应该是jsp</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200604105906.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200604105906.png"></p>
 <p>点开一个链接，发现有id可以传参，测试注入</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200604110510.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200604110510.png"></p>
 <p>存在注入</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200604110807.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200604110807.png"></p>
 <p>上sqlmap，发现是DBA权限</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200604111238.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200604111238.png"></p>
 <p>尝试os-shell失败，sql-shell成功但是无法写shell</p>
 <p>读MySQL路径，发现是Linux系统（Linux系统下MySQL的root权限很小，相当于服务权限，所以就没法导shell）</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200604111613.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200604111613.png"></p>
 <p>然后这边尝试把目录删掉，直接IP/端口访问，发现了Tomcat配置界面</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200604112059.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200604112059.png"></p>
 <p>那就可以通过部署war包进行getshell了</p>
 <p>MySQL路径是 <code>/usr/local/mysql</code> ，tomcat应该在同级目录</p>
 <p>然后读取tomcat配置文件，得到账号密码</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200604112850.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200604112850.png"></p>
 <p>登陆进tomcat，使用部署漏洞getshell</p>
 <p>先将jsp大马压缩为zip，再将zip后缀改名为war，然后上传war包</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200604113856.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200604113856.png"></p>
 <p>上传成功</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200604114002.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200604114002.png"></p>
 <p>访问</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200604114209.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20200604114209.png"></p>
 
       
     </div>
@@ -387,6 +387,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Getshell%EF%BC%8C%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="tag"># Getshell，面试题</a>
+          
+        </div>
       
 
       
@@ -494,7 +500,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">61</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>

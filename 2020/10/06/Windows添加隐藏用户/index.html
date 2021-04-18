@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="WEB安全|黑客技术|渗透测试|黑盒测试|网络安全|红蓝对抗|红队攻防" />
+  <meta name="keywords" content="windows,隐藏用户," />
 
 
 
@@ -98,9 +98,10 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201006010058.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201006010103.png">
 <meta property="article:published_time" content="2020-10-05T16:42:35.000Z">
-<meta property="article:modified_time" content="2020-10-05T17:01:48.000Z">
+<meta property="article:modified_time" content="2021-04-18T05:20:57.243Z">
 <meta property="article:author" content="Assassins 小白">
-<meta property="article:tag" content="WEB安全|黑客技术|渗透测试|黑盒测试|网络安全|红蓝对抗|红队攻防|内网渗透">
+<meta property="article:tag" content="windows">
+<meta property="article:tag" content="隐藏用户">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201006004518.png">
 
@@ -348,29 +349,29 @@
       
         <p>早上早早起来真的可以做很多事，比如再睡一觉</p>
 <hr>
-<a id="more"></a>
+<span id="more"></span>
 
 <p>创建用户，添加到管理员组</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201006004518.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201006004518.png"></p>
 <p>用户名后面添加一个 <code>$</code> 在终端上用 <code>net user</code> 查看不到，但是在管理账户处还是可以看到的</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201006004700.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201006004700.png"></p>
 <p><code>regedit</code> 打开注册表，到 <code>HKEY_LOCAL_MACHINE\SAM\SAM</code>，右键权限，给 <code>administrator</code> 账号读写权限</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201006004935.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201006005034.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201006004935.png"></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201006005034.png"></p>
 <p>然后刷新一下注册表，再到 <code>HKEY_LOCAL_MACHINE\SAM\SAM\Domains\Account\Users</code> 目录下</p>
 <p>把 <code>administrator</code> 账号对应的 <code>000001F4</code> 的F值复制出来覆盖掉 <code>xb$</code> 用户的 <code>000003E9</code> 下的F值</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201006005421.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201006005421.png"></p>
 <p>把 <code>xb$</code> 和 <code>000003E9</code> 目录导出来</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201006005431.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201006005431.png"></p>
 <p>然后 <code>net user xb$ /del</code> 删除掉我们创建的用户</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201006005723.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201006005723.png"></p>
 <p>再把刚刚我们导出的东西导入注册表</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201006005836.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201006005836.png"></p>
 <p>这样就看不到我们的账户了</p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201006010022.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201006010022.png"></p>
 <p>使用 <code>xb$</code> 账号登陆为 <code>administrator</code></p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201006010058.png" alt></p>
-<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201006010103.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201006010058.png"></p>
+<p><img src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/20201006010103.png"></p>
 
       
     </div>
@@ -385,6 +386,14 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/windows/" rel="tag"># windows</a>
+          
+            <a href="/tags/%E9%9A%90%E8%97%8F%E7%94%A8%E6%88%B7/" rel="tag"># 隐藏用户</a>
+          
+        </div>
       
 
       
@@ -492,7 +501,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">61</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
