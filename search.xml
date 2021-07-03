@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>渗透测试域环境搭建</title>
+      <link href="2021/07/03/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E5%9F%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+      <url>2021/07/03/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E5%9F%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
+      
+        <content type="html"><![CDATA[<p>他们想把你埋了，但你是一颗种子</p><hr><span id="more"></span><h3 id="基础信息"><a href="#基础信息" class="headerlink" title="基础信息"></a>基础信息</h3><p><strong>Windows 7</strong>：192.168.174.131        域成员机器</p><p><strong>Windows 10</strong>：192.168.174.132        域成员机器</p><p><strong>Server 2012</strong>：192.168.174.133        使用Server 2012做域控服务器</p><h3 id="安装域"><a href="#安装域" class="headerlink" title="安装域"></a>安装域</h3><p>域控的IP须是静态的，静态IP设置如下</p><p><img src="../../../../img/21-07-03/1.png"></p><p>更改域控计算机名，然后重启</p><p><img src="../../../../img/21-07-03/2.png"></p><p><strong>开始安装AD服务</strong></p><p>添加角色，一直默认下一步到 “服务器角色”，勾选Active Directory 域服务-&gt;添加功能，下一步</p><p><img src="../../../../img/21-07-03/3.png"></p><p>到这里点击安装</p><p><img src="../../../../img/21-07-03/4.png"></p><p>安装完成后，点击”将此服务器提升为域控制器”</p><p><img src="../../../../img/21-07-03/5.png"></p><p>添加新林，设置根域名为 pentest.local </p><p>PS：域名随意，但是最好不要填外网存在的域名，不然通外网解析容易出错</p><p><img src="../../../../img/21-07-03/6.png"></p><p>设置还原模式密码，下一步</p><p><img src="../../../../img/21-07-03/7.png"></p><p>一路默认下一步，然后点击安装</p><p><img src="../../../../img/21-07-03/8.png"></p><p>安装完后会自动重启，再登录的时候会看到账号名称发生了变化，变成了 PENTEST\Administrator </p><p>PS：这是域账号的登录模式，要登录一个域，需要在账号前面加上域名称和斜杠</p><p><img src="../../../../img/21-07-03/9.png"></p><p>域成员机器的DNS服务器设置成域控的IP，如下</p><p><img src="../../../../img/21-07-03/10.png"></p><h3 id="加入域"><a href="#加入域" class="headerlink" title="加入域"></a>加入域</h3><p>创建好域后，将Windows7和Windows10加入域，如下</p><p>域填写我们的域名字，计算机名随便填</p><p><img src="../../../../img/21-07-03/11.png"></p><p>输入域控本地管理员的账号密码，加入域</p><p><img src="../../../../img/21-07-03/12.png"></p><p>成功加入pentest.local域</p><p><img src="../../../../img/21-07-03/13.png"></p><p>Windows10相同的操作加入域</p><p><img src="../../../../img/21-07-03/14.png"></p><h3 id="添加域用户"><a href="#添加域用户" class="headerlink" title="添加域用户"></a>添加域用户</h3><p>重启，然后去域控给他们添加域用户</p><p>点击开始-&gt;管理工具</p><p><img src="../../../../img/21-07-03/15.png"></p><p>展开 pentest.local ，点击 Computers ，可以查看到域中新添加了两台计算机，分别是 win7和 win10</p><p>加入域后，还需要有域账号才能登录域</p><p><img src="../../../../img/21-07-03/16.png"></p><p>在域名上右键，新建-&gt;用户</p><p><img src="../../../../img/21-07-03/17.png"></p><p>添加域用户：win7</p><p><img src="../../../../img/21-07-03/18.png"></p><p>给域用户设置密码</p><p><img src="../../../../img/21-07-03/19.png"></p><p>添加两个域用户</p><p><img src="../../../../img/21-07-03/20.png"></p><p>然后去域成员账户登录</p><p>点击切换用户，使用 **pentest\win7 ** 和域用户密码登录</p><p><img src="../../../../img/21-07-03/21.png"></p><p><img src="../../../../img/21-07-03/22.png"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 渗透测试 </tag>
+            
+            <tag> 域环境 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>微信默认浏览器存在Chrome V8引擎RCE漏洞复现</title>
       <link href="2021/04/18/%E5%BE%AE%E4%BF%A1%E9%BB%98%E8%AE%A4%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AD%98%E5%9C%A8Chrome-V8%E5%BC%95%E6%93%8ERCE%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
       <url>2021/04/18/%E5%BE%AE%E4%BF%A1%E9%BB%98%E8%AE%A4%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AD%98%E5%9C%A8Chrome-V8%E5%BC%95%E6%93%8ERCE%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/</url>
