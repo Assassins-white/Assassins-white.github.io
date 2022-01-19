@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="WEB安全|黑客技术|渗透测试|黑盒测试|网络安全">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="如果快乐太难，那祝你百事可乐">
+<meta name="keywords" content="WEB安全|黑客技术|渗透测试|黑盒测试|网络安全">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nmap备忘录">
+<meta property="og:url" content="http://yoursite.com/2020/08/31/Nmap备忘录/index.html">
+<meta property="og:site_name" content="Assassins 小白">
+<meta property="og:description" content="如果快乐太难，那祝你百事可乐">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-08-31T10:06:42.834Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Nmap备忘录">
+<meta name="twitter:description" content="如果快乐太难，那祝你百事可乐">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/08/31/Nmap备忘录/">
+
+
+
+
+
+  <title>Nmap备忘录 | Assassins 小白</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Assassins 小白</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Assassins 小白</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/31/Nmap备忘录/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Assassins 小白">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Assassins 小白">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Nmap备忘录</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-08-31T17:40:02+08:00">
+                2020-08-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>如果快乐太难，那祝你百事可乐</p>
+<hr>
+<a id="more"></a>
+
+<center><h1>Nmap备忘录</h1></center>
+
+<h3 id="目标规格"><a href="#目标规格" class="headerlink" title="目标规格"></a>目标规格</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">			nmap 192.168.1.1					扫描一个IP</span><br><span class="line">			nmap 192.168.1.1 192.168.2.1		扫描IP段</span><br><span class="line">			nmap 192.168.1.1-254				扫描一个范围</span><br><span class="line">			nmap nmap.org						扫描一个域名</span><br><span class="line">			nmap 192.168.1.0/24					使用CIDR表示法扫描</span><br><span class="line">-iL			nmap -iL target.txt					扫描文件中的目标</span><br><span class="line">-iR			nmap -iR 100						扫描100个随机主机</span><br><span class="line">--exclude	nmap --exclude 192.168.1.1			排除列出的主机</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="扫描手法"><a href="#扫描手法" class="headerlink" title="扫描手法"></a>扫描手法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-sS			nmap 192.168.1.1 -sS		TCP SYN端口扫描(有root权限默认)</span><br><span class="line">-sT			nmap 192.168.1.1 -sT		TCP连接端口扫描(没有root权限默认)</span><br><span class="line">-sU			nmap 192.168.1.1 -sU		UDP端口扫描</span><br><span class="line">-sA			nmap 192.168.1.1 -sA		TCP ACK端口扫描</span><br><span class="line">-sW			nmap 192.168.1.1 -sW		滑动窗口扫描</span><br><span class="line">-sM			nmap 192.168.1.1 -sM		TCP Maimon扫描</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="主机发现"><a href="#主机发现" class="headerlink" title="主机发现"></a>主机发现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-sL			nmap 192.168.1.1-3 -sL				不扫描,仅列出目标</span><br><span class="line">-sn			nmap 192.168.1.1/24 -sn				禁用端口扫描</span><br><span class="line">-Pn			nmap 192.168.1.1-5 -Pn				跳过主机发现,直接扫描端口</span><br><span class="line">-PS			nmap 192.168.1.1-5 -PS22-25,80		端口X上的TCP SYN发现,默认80</span><br><span class="line">-PA			nmap 192.168.1.1-5 -PA22-25,80		端口X上的TCP ACK发现,默认80</span><br><span class="line">-PU			nmap 192.168.1.1-5 -PU53			端口X上的UDP发现,默认40125</span><br><span class="line">-PR			nmap 192.168.1.1/24 -PR				本地网络上的ARP发现</span><br><span class="line">-n			nmap 192.168.1.1 -n					不做DNS解析</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="端口规格"><a href="#端口规格" class="headerlink" title="端口规格"></a>端口规格</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-p			 nmap 192.168.1.1 -p 21				   扫描特定端口</span><br><span class="line">-p			 nmap 192.168.1.1 -p 21-100			   扫描端口范围</span><br><span class="line">-p			 nmap 192.168.1.1 -p U:53,T:21-25,80   扫描多个TCP和UDP端口</span><br><span class="line">-p-			 nmap 192.168.1.1 -p-				   扫描所有端口</span><br><span class="line">-p			 nmap 192.168.1.1 -p http,https		   基于服务名称的端口扫描</span><br><span class="line">-F			 nmap 192.168.1.1 -F				   快速扫描(100个端口)</span><br><span class="line">--top-ports  nmap 192.168.1.1 --top-ports 2000 	   扫描前2000个端口</span><br><span class="line">-p-65535     nmap 192.168.1.1 -p-65535			   从端口1开始扫描</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="时间和性能"><a href="#时间和性能" class="headerlink" title="时间和性能"></a>时间和性能</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-T0 	nmap 192.168.1.1 -T0 	妄想症,非常非常慢，用于IDS逃逸</span><br><span class="line">-T1 	nmap 192.168.1.1 -T1	猥琐的,相当慢，用于IDS逃逸</span><br><span class="line">-T2 	nmap 192.168.1.1 -T2	礼貌的,降低速度以消耗更小的带宽，比默认慢十倍</span><br><span class="line">-T3 	nmap 192.168.1.1 -T3	正常的,默认，根据目标的反应自动调整时间模式</span><br><span class="line">-T4 	nmap 192.168.1.1 -T4	野蛮的,在一个很好的网络环境，请求可能会淹没目标</span><br><span class="line">-T5 	nmap 192.168.1.1 -T5	疯狂的,很可能会淹没目标端口或是漏掉一些开放端口</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="NSE脚本"><a href="#NSE脚本" class="headerlink" title="NSE脚本"></a>NSE脚本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">nmap 192.168.1.1 -sC 						使用默认的NSE脚本进行扫描</span><br><span class="line">nmap 192.168.1.1 --script=banner			使用单个脚本扫描,banner示例</span><br><span class="line">nmap 192.168.1.1 --script=http,banner  		使用两个脚本扫描,示例http,banner</span><br><span class="line">nmap 192.168.1.1 --script=http*				使用通配符扫描,http示例</span><br><span class="line">nmap 192.168.1.1 --script &quot;not intrusive&quot;	扫描默认值,删除侵入性脚本</span><br><span class="line">nmap 192.168.1.1 --script=smb-vuln*			扫描所有smb漏洞</span><br><span class="line">nmap 192.168.1.1 --script=vuln				扫描常见漏洞</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">nmap 192.168.1.1 -v 				 增加详细程度,-vv效果更好</span><br><span class="line">nmap 192.168.1.1 -oN test.txt		 标准输出写入到指定文件中</span><br><span class="line">nmap 192.168.1.1 -oX test.xml		 将输入写成xml的形式</span><br><span class="line">nmap 192.168.1.1 -oG grep.txt		 将输出写成特殊格式</span><br><span class="line">nmap 192.168.1.1 -oA results		 将输出所有格式,有三种 .xml/.gnmap/.nmap</span><br><span class="line">nmap 192.168.1.1 --open 			 仅显示开放的端口</span><br><span class="line">nmap 192.168.1.1 -T4 --packet-trace  显示所有发送和接收的数据包</span><br><span class="line">nmap --resume test.txt				 恢复扫描，配合-oG等命令使用</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="服务和版本检测"><a href="#服务和版本检测" class="headerlink" title="服务和版本检测"></a>服务和版本检测</h3><ul>
+<li><p><code>nmap 192.168.1.1 -sV</code></p>
+<pre><code>* 尝试确定端口上运行的服务的版本</code></pre></li>
+<li><p><code>nmap 192.168.1.1 -sV --version-intensity 8</code></p>
+<ul>
+<li>强度级别0到9，数字越大，正确性越强，默认值为7</li>
+</ul>
+</li>
+<li><p><code>nmap 192.168.1.1 -sV --version-light</code></p>
+<ul>
+<li>轻量级版本扫描，使扫描进程加快，但它识别服务的正确率降低</li>
+</ul>
+</li>
+<li><p><code>nmap 192.168.1.1 -sV --version-all</code></p>
+<ul>
+<li>version-all相当于version-intensity的最高级别9，保证对每个端口尝试每个探测报文</li>
+</ul>
+</li>
+<li><p><code>nmap 192.168.1.1 -A</code></p>
+<ul>
+<li>启用操作系统检测，版本检测，脚本扫描和跟踪路由…</li>
+</ul>
+</li>
+<li><p><code>nmap 192.168.1.1 -O</code></p>
+<ul>
+<li>使用TCP/IP进行远程OS指纹识别</li>
+</ul>
+</li>
+<li><p><code>nmap 192.168.1.1 -O --osscan-guess</code></p>
+<ul>
+<li>当Nmap无法确定所检测的操作系统时，会尽可能地提供最相近的匹配</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="防火墙-IDS规避和欺骗"><a href="#防火墙-IDS规避和欺骗" class="headerlink" title="防火墙/IDS规避和欺骗"></a>防火墙/IDS规避和欺骗</h3><ul>
+<li><p><code>nmap 192.168.1.1 -f</code></p>
+<ul>
+<li>报文分段，请求的扫描(包括ping扫描)使用微小的碎片IP数据包, 包过滤器检测更难</li>
+</ul>
+</li>
+<li><p><code>nmap 192.168.1.1 --mtu 32</code></p>
+<ul>
+<li>利用数据包分片技术，某些防火墙为了加快处理速度而不会进行重组处理，这样从而逃脱防火墙或闯入检测系统的检测,注意:mtu的值必须是 8 的倍数(如8,16,24,32等)</li>
+</ul>
+</li>
+<li><p><code>nmap -D 10.1.1.1,20.2.2.2 192.168.1.1</code></p>
+</li>
+<li><p><code>nmap -D RND:11 192.168.1.1</code></p>
+<ul>
+<li>使用-D选项就可以达到IP欺骗的目的,可以指定多个IP或者使用RND随机生成几个IP地址</li>
+</ul>
+</li>
+<li><p><code>nmap -S www.microso.com www.facebook.com</code></p>
+<ul>
+<li>源地址欺骗,从Microso扫描Facebook</li>
+</ul>
+</li>
+<li><p><code>nmap -g 53 192.168.1.1</code></p>
+<ul>
+<li>指定源主机端口,来手动设定用来扫描的端口,s常用的如 20、53、67 端口</li>
+</ul>
+</li>
+<li><p><code>nmap --proxies http://191.1.1.1:1080,http://192.2.2.2:1080 192.168.1.1</code></p>
+<ul>
+<li>通过HTTP/SOCKS4代理中继连接</li>
+</ul>
+</li>
+<li><p><code>nmap --data-length 200 192.168.1.1</code></p>
+<ul>
+<li>添加垃圾数据,通过在发送的数据包末尾添加随机的垃圾数据，以达到混淆视听的作效果,200是垃圾数据长度</li>
+</ul>
+</li>
+<li><p><code>nmap --spoof-mac 0 192.168.1.1</code></p>
+<ul>
+<li>伪装MAC地址,可以手动指定 MAC 地址的值。或者为了简单起见,可以填写数字 0,这将生成一个随机的 MAC 地址</li>
+</ul>
+</li>
+<li><p><code>nmap --badsum 192.168.1.1</code></p>
+<ul>
+<li>伪造检验值,这将使用伪造的 TCP/UDP/SCTP 校验和发送数据</li>
+</ul>
+</li>
+</ul>
+<p><strong>示例IDS规避命令</strong></p>
+<p><code>nmap -f -T0 -n -Pn --data-length 200 -D 192.168.1.101,192.168.1.102,192.168.1.103,192.168.1.23 192.168.1.1</code></p>
+<hr>
+<h3 id="端口状态"><a href="#端口状态" class="headerlink" title="端口状态"></a>端口状态</h3><p><strong>open(开放的)</strong></p>
+<p>应用程序正在该端口接收TCP 连接或者UDP报文。发现这一点常常是端口扫描 的主要目标。安全意识强的人们知道每个开放的端口 都是攻击的入口。攻击者或者入侵测试者想要发现开放的端口。 而管理员则试图关闭它们或者用防火墙保护它们以免妨碍了合法用户。 非安全扫描可能对开放的端口也感兴趣，因为它们显示了网络上那些服务可供使用。</p>
+<p><strong>closed(关闭的)</strong></p>
+<p>关闭的端口对于Nmap也是可访问的(它接受Nmap的探测报文并作出响应)， 但没有应用程序在其上监听。 它们可以显示该IP地址上(主机发现，或者ping扫描)的主机正在运行up 也对部分操作系统探测有所帮助。 因为关闭的关口是可访问的，也许过会儿值得再扫描一下，可能一些又开放了。 系统管理员可能会考虑用防火墙封锁这样的端口。 那样他们就会被显示为被过滤的状态，下面讨论。</p>
+<p><strong>filtered(被过滤的)</strong></p>
+<p>由于包过滤阻止探测报文到达端口， Nmap无法确定该端口是否开放。过滤可能来自专业的防火墙设备，路由器规则 或者主机上的软件防火墙。这样的端口让攻击者感觉很挫折，因为它们几乎不提供 任何信息。有时候它们响应ICMP错误消息如类型3代码13 (无法到达目标: 通信被管理员禁止)，但更普遍的是过滤器只是丢弃探测帧， 不做任何响应。 这迫使Nmap重试若干次以访万一探测包是由于网络阻塞丢弃的。 这使得扫描速度明显变慢。</p>
+<p><strong>unfiltered(未被过滤的)</strong></p>
+<p>未被过滤状态意味着端口可访问，但Nmap不能确定它是开放还是关闭。 只有用于映射防火墙规则集的ACK扫描才会把端口分类到这种状态。 用其它类型的扫描如窗口扫描，SYN扫描，或者FIN扫描来扫描未被过滤的端口可以帮助确定 端口是否开放。</p>
+<p><strong>open|filtered(开放或者被过滤的)</strong></p>
+<p>当无法确定端口是开放还是被过滤的，Nmap就把该端口划分成 这种状态。开放的端口不响应就是一个例子。没有响应也可能意味着报文过滤器丢弃 了探测报文或者它引发的任何响应。因此Nmap无法确定该端口是开放的还是被过滤的。 UDP，IP协议， FIN，Null，和Xmas扫描可能把端口归入此类。</p>
+<p><strong>closed|filtered(关闭或者被过滤的)</strong></p>
+<p>该状态用于Nmap不能确定端口是关闭的还是被过滤的。 它只可能出现在IPID Idle扫描中。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/08/06/ByPass安全狗XSS/" rel="next" title="ByPass安全狗XSS">
+                <i class="fa fa-chevron-left"></i> ByPass安全狗XSS
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/10/06/Windows添加隐藏用户/" rel="prev" title="Windows添加隐藏用户">
+                Windows添加隐藏用户 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://raw.githubusercontent.com/Assassins-white/imgs/mastrt/img/1.jpg" alt="Assassins 小白">
+            
+              <p class="site-author-name" itemprop="name">Assassins 小白</p>
+              <p class="site-description motion-element" itemprop="description">行善的最高境界不是施舍，而是引路</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-globe"></i>
+                平昔之交
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.se7ensec.cn/" title="Se7en的博客" target="_blank">Se7en的博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://legoc.github.io/" title="Lego的博客" target="_blank">Lego的博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.sy4.top/" title="Picnic的博客" target="_blank">Picnic的博客</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">Nmap备忘录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#目标规格"><span class="nav-number">1.0.1.</span> <span class="nav-text">目标规格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#扫描手法"><span class="nav-number">1.0.2.</span> <span class="nav-text">扫描手法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主机发现"><span class="nav-number">1.0.3.</span> <span class="nav-text">主机发现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#端口规格"><span class="nav-number">1.0.4.</span> <span class="nav-text">端口规格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#时间和性能"><span class="nav-number">1.0.5.</span> <span class="nav-text">时间和性能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NSE脚本"><span class="nav-number">1.0.6.</span> <span class="nav-text">NSE脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出"><span class="nav-number">1.0.7.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务和版本检测"><span class="nav-number">1.0.8.</span> <span class="nav-text">服务和版本检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#防火墙-IDS规避和欺骗"><span class="nav-number">1.0.9.</span> <span class="nav-text">防火墙/IDS规避和欺骗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#端口状态"><span class="nav-number">1.0.10.</span> <span class="nav-text">端口状态</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Assassins 小白</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by 小白</div>
+
+
+
+  <span class="post-meta-divider">|&nbsp;&nbsp;&nbsp;行善的最高境界不是施舍，而是引路
+
+
+
+
+
+<span id="busuanzi_container_site_uv" class="theme-info">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本站访问次数：<span id="busuanzi_value_site_uv"></span></span>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        
+
+
+
+
+
+
+
+        
+      </span></div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
