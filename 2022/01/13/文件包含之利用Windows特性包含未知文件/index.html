@@ -94,7 +94,7 @@
 <meta property="og:image" content="https://assassins-white.github.io/img/22-1-13/image-20220119142428532.png">
 <meta property="og:image" content="https://assassins-white.github.io/img/22-1-13/image-20220119142447635.png">
 <meta property="article:published_time" content="2022-01-13T06:17:25.000Z">
-<meta property="article:modified_time" content="2022-01-19T06:26:10.450Z">
+<meta property="article:modified_time" content="2022-01-19T06:35:55.549Z">
 <meta property="article:author" content="Assassins 小白">
 <meta property="article:tag" content="文件包含">
 <meta property="article:tag" content="Windows特性">
@@ -351,8 +351,8 @@
 <p><strong>此特性只能在Windows环境下使用，因为 Windows 在搜索文件时使用到了 FindFirstFile 这一个 Winapi 函数</strong></p>
 <h2 id="利用场景"><a href="#利用场景" class="headerlink" title="利用场景"></a>利用场景</h2><p><strong>知道文件所在目录，但不知道文件名的情况下来包含我们的马</strong></p>
 <p>假如某处存在文件包含漏洞，我们需要上传一个我们自己的文件来包含，但如果上传的文件经过了重命名，且没有返回文件名，就可以使用此技巧包含</p>
-<h2 id="利用方法"><a href="#利用方法" class="headerlink" title="利用方法"></a>利用方法</h2><p>我们可以将文件名未知部分的字符串使用 “<code>&lt;</code>“ 或 “<code>&gt;</code>“ 代替，但是需要注意：一个 “<code>&lt;</code>“ 或 “<code>&gt;</code>“ 只能代表一个字符</p>
-<p>如果我们上传的马子为 shell.php，那么请求 “<code>s&lt;</code>“ 或者 “<code>s&gt;</code>“ 都是访问不到文件的。需要使用 “<code>s&lt;&lt;</code>“ 才能访问到，含义为继续往下搜索</p>
+<h2 id="利用方法"><a href="#利用方法" class="headerlink" title="利用方法"></a>利用方法</h2><p>我们可以将文件名未知部分的字符串使用 <code>&lt;</code> 或 <code>&gt;</code> 代替，但是需要注意：一个 <code>&lt;</code> 或 <code>&gt;</code> 只能代表一个字符</p>
+<p>如果我们上传的马子为 shell.php，那么请求 <code>s&lt;</code> 或者 <code>s&gt;</code> 都是访问不到文件的。需要使用 <code>s&lt;&lt;</code> 才能访问到，含义为继续往下搜索</p>
 <h2 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h2><p><strong>文件包含漏洞：index.php</strong></p>
 <p><img src="../../../../img/22-1-13/image-20220119142152242.png" alt="image-20220119142152242"></p>
 <p><strong>webshell文件：shell.php</strong></p>
