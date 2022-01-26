@@ -4,6 +4,29 @@
   
     
     <entry>
+      <title>CVE-2021-4034 pkexec 本地提权</title>
+      <link href="2022/01/26/CVE-2021-4034-pkexec-%E6%9C%AC%E5%9C%B0%E6%8F%90%E6%9D%83/"/>
+      <url>2022/01/26/CVE-2021-4034-pkexec-%E6%9C%AC%E5%9C%B0%E6%8F%90%E6%9D%83/</url>
+      
+        <content type="html"><![CDATA[<p>越来越不爱说话了，最近打算去报个手语班</p><hr><span id="more"></span><h2 id="文章介绍："><a href="#文章介绍：" class="headerlink" title="文章介绍："></a>文章介绍：</h2><p><a href="https://mp.weixin.qq.com/s?__biz=Mzk0NDE3MTkzNQ==&amp;mid=2247484217&amp;idx=1&amp;sn=b01d4a2a491d17a72f092fa6bf0dc2d1&amp;chksm=c329fdc9f45e74df1bb9fc5c4699dfdf4eac954dd53ed89fb8d62ba0bbe94f5fb2da75c59569&amp;mpshare=1&amp;scene=1&amp;srcid=01261Xb1B1Cl6qlznE5HPUIB&amp;sharer_sharetime=1643178087788&amp;sharer_shareid=7ade7cd67b3fd182fc7e3126dee1d2e7&amp;version=3.1.23.70088&amp;platform=mac#rd">https://mp.weixin.qq.com/s?__biz=Mzk0NDE3MTkzNQ==&amp;mid=2247484217&amp;idx=1&amp;sn=b01d4a2a491d17a72f092fa6bf0dc2d1&amp;chksm=c329fdc9f45e74df1bb9fc5c4699dfdf4eac954dd53ed89fb8d62ba0bbe94f5fb2da75c59569&amp;mpshare=1&amp;scene=1&amp;srcid=01261Xb1B1Cl6qlznE5HPUIB&amp;sharer_sharetime=1643178087788&amp;sharer_shareid=7ade7cd67b3fd182fc7e3126dee1d2e7&amp;version=3.1.23.70088&amp;platform=mac#rd</a></p><h2 id="EXP1"><a href="#EXP1" class="headerlink" title="EXP1"></a>EXP1</h2><p>需要编译再利用：<a href="https://github.com/berdav/CVE-2021-4034">https://github.com/berdav/CVE-2021-4034</a><br><img src="../../../../img/22-1-26/12825c21f2f3168c06dfc50444b2fc01.png" alt="image1"></p><h2 id="EXP2"><a href="#EXP2" class="headerlink" title="EXP2"></a>EXP2</h2><p>直接用python3利用，不需要编译：<a href="https://github.com/nikaiw/CVE-2021-4034">https://github.com/nikaiw/CVE-2021-4034</a><br><img src="../../../../img/22-1-26/e59eb474c8c1ce2681e1520417841642.png" alt="image1"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> CVE-2021-4034 </tag>
+            
+            <tag> pkexec </tag>
+            
+            <tag> Linux本地提权 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Apache Flink任意文件上传/读取(CVE-2020-17518/17519)漏洞复现</title>
       <link href="2022/01/21/Apache-Flink%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0-%E8%AF%BB%E5%8F%96-CVE-2020-17518-17519-%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
       <url>2022/01/21/Apache-Flink%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0-%E8%AF%BB%E5%8F%96-CVE-2020-17518-17519-%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/</url>
@@ -77,7 +100,7 @@
       <link href="2022/01/13/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E4%B9%8B%E5%88%A9%E7%94%A8Windows%E7%89%B9%E6%80%A7%E5%8C%85%E5%90%AB%E6%9C%AA%E7%9F%A5%E6%96%87%E4%BB%B6/"/>
       <url>2022/01/13/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E4%B9%8B%E5%88%A9%E7%94%A8Windows%E7%89%B9%E6%80%A7%E5%8C%85%E5%90%AB%E6%9C%AA%E7%9F%A5%E6%96%87%E4%BB%B6/</url>
       
-        <content type="html"><![CDATA[<p>善良是很珍贵的，但善良没有长出牙齿来，那就是软弱</p><hr><span id="more"></span><p>这个思路14年左右就已经用在dedecms找后台上了，只不过我现在才知道，写个博客记录一下</p><p><strong>此特性只能在Windows环境下使用，因为 Windows 在搜索文件时使用到了 FindFirstFile 这一个 Winapi 函数</strong></p><h2 id="利用场景"><a href="#利用场景" class="headerlink" title="利用场景"></a>利用场景</h2><p><strong>知道文件所在目录，但不知道文件名的情况下来包含我们的马</strong></p><p>假如某处存在文件包含漏洞，我们需要上传一个我们自己的文件来包含，但如果上传的文件经过了重命名，且没有返回文件名，就可以使用此技巧包含</p><h2 id="利用方法"><a href="#利用方法" class="headerlink" title="利用方法"></a>利用方法</h2><p>我们可以将文件名未知部分的字符串使用 <code>&lt;</code> 或 <code>&gt;</code> 代替，但是需要注意：一个 <code>&lt;</code> 或 <code>&gt;</code> 只能代表一个字符</p><p>如果我们上传的马子为 shell.php，那么请求 <code>s&lt;</code> 或者 <code>s&gt;</code> 都是访问不到文件的。需要使用 <code>s&lt;&lt;</code> 才能访问到，含义为继续往下搜索</p><h2 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h2><p><strong>文件包含漏洞：index.php</strong></p><p><img src="../../../../img/22-1-13/image-20220119142152242.png" alt="image-20220119142152242"></p><p><strong>webshell文件：shell.php</strong></p><p><img src="../../../../img/22-1-13/image-20220119142216006.png" alt="image-20220119142216006"></p><p>我们使用上述姿势包含 <code>shell.php</code> 文件</p><p><img src="../../../../img/22-1-13/image-20220119142240844.png" alt="image-20220119142240844"></p><p><strong>测试发现，在使用 <code>&lt;&lt;</code> 去匹配时，会优先匹配值最小的文件名称</strong></p><p><strong>如下文件名：</strong></p><p><img src="../../../../img/22-1-13/image-20220119142343249.png" alt="image-20220119142343249"></p><p>我们直接匹配 <code>2&lt;&lt;</code>会匹配到最小的 <code>202033333333333333333333.php</code> 文件</p><p><img src="../../../../img/22-1-13/image-20220119142408230.png" alt="image-20220119142408230"></p><p>如果需要匹配2022文件，需要增加文件的准确度，也就是 <code>2022&lt;&lt;</code></p><p><img src="../../../../img/22-1-13/image-20220119142428532.png" alt="image-20220119142428532"></p><h2 id="完结"><a href="#完结" class="headerlink" title="完结"></a>完结</h2><p>此特性并不是只有文件包含函数才可用，事实上还有很多函数也一样可利用这个特性，我们在进行代码审计的时候也可以注意一下，说不定就能挖出意想不到的漏洞</p><p><img src="../../../../img/22-1-13/image-20220119142447635.png" alt="image-20220119142447635"></p>]]></content>
+        <content type="html"><![CDATA[<p>善良是很珍贵的，但善良没有长出牙齿来，那就是软弱</p><hr><span id="more"></span><p>最近在火线看的文章</p><p>发现这个思路14年左右就已经用在dedecms找后台上了，只不过我现在才知道，写个博客记录一下</p><p><strong>此特性只能在Windows环境下使用，因为 Windows 在搜索文件时使用到了 FindFirstFile 这一个 Winapi 函数</strong></p><h2 id="利用场景"><a href="#利用场景" class="headerlink" title="利用场景"></a>利用场景</h2><p><strong>知道文件所在目录，但不知道文件名的情况下来包含我们的马</strong></p><p>假如某处存在文件包含漏洞，我们需要上传一个我们自己的文件来包含，但如果上传的文件经过了重命名，且没有返回文件名，就可以使用此技巧包含</p><h2 id="利用方法"><a href="#利用方法" class="headerlink" title="利用方法"></a>利用方法</h2><p>我们可以将文件名未知部分的字符串使用 <code>&lt;</code> 或 <code>&gt;</code> 代替，但是需要注意：一个 <code>&lt;</code> 或 <code>&gt;</code> 只能代表一个字符</p><p>如果我们上传的马子为 shell.php，那么请求 <code>s&lt;</code> 或者 <code>s&gt;</code> 都是访问不到文件的。需要使用 <code>s&lt;&lt;</code> 才能访问到，含义为继续往下搜索</p><h2 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h2><p><strong>文件包含漏洞：index.php</strong></p><p><img src="../../../../img/22-1-13/image-20220119142152242.png" alt="image-20220119142152242"></p><p><strong>webshell文件：shell.php</strong></p><p><img src="../../../../img/22-1-13/image-20220119142216006.png" alt="image-20220119142216006"></p><p>我们使用上述姿势包含 <code>shell.php</code> 文件</p><p><img src="../../../../img/22-1-13/image-20220119142240844.png" alt="image-20220119142240844"></p><p><strong>测试发现，在使用 <code>&lt;&lt;</code> 去匹配时，会优先匹配值最小的文件名称</strong></p><p><strong>如下文件名：</strong></p><p><img src="../../../../img/22-1-13/image-20220119142343249.png" alt="image-20220119142343249"></p><p>我们直接匹配 <code>2&lt;&lt;</code>会匹配到最小的 <code>202033333333333333333333.php</code> 文件</p><p><img src="../../../../img/22-1-13/image-20220119142408230.png" alt="image-20220119142408230"></p><p>如果需要匹配2022文件，需要增加文件的准确度，也就是 <code>2022&lt;&lt;</code></p><p><img src="../../../../img/22-1-13/image-20220119142428532.png" alt="image-20220119142428532"></p><h2 id="完结"><a href="#完结" class="headerlink" title="完结"></a>完结</h2><p>此特性并不是只有文件包含函数才可用，事实上还有很多函数也一样可利用这个特性，我们在进行代码审计的时候也可以注意一下，说不定就能挖出意想不到的漏洞</p><p><img src="../../../../img/22-1-13/image-20220119142447635.png" alt="image-20220119142447635"></p>]]></content>
       
       
       
