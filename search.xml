@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>Clash RCE复现</title>
+      <link href="2022/02/26/Clash-RCE%E5%A4%8D%E7%8E%B0/"/>
+      <url>2022/02/26/Clash-RCE%E5%A4%8D%E7%8E%B0/</url>
+      
+        <content type="html"><![CDATA[<p>今天都在发Clash的Rce，但是大哥说这Clash的漏洞21年就有了，而且也不是新技术，因为clash使用了Electron框架开发，框架的xss漏洞导致的rce，简单复现一下吧</p><hr><span id="more"></span><p>使用以下脚本复现：<a href="https://github.com/Jaky5155/clash_windows_RCE">Jaky5155/clash_windows_RCE</a></p><p>直接下载回来，拖入Clash订阅</p><p>然后点击 <code>节点</code>，就会触发，成功Rce了</p><p><img src="../../../../img/22-2-26/image-20220226014428884.png" alt="image-20220226014428884"></p><p>但是看着有加载失败的图片图标，让人看着很可疑，简单做一下伪装吧</p><p>在payload后面添加：<code>height=&quot;0&quot; width=&quot;0&quot;</code> </p><p><img src="../../../../img/22-2-26/image-20220226015951125.png" alt="image-20220226015951125"></p><p>这样就不会显示出失败的图片了</p><p>效果：</p><p><img src="../../../../img/22-2-26/image-20220226020109344.png" alt="image-20220226020109344"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> RCE </tag>
+            
+            <tag> Clash </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>CVE-2021-4034 pkexec 本地提权</title>
       <link href="2022/01/26/CVE-2021-4034-pkexec-%E6%9C%AC%E5%9C%B0%E6%8F%90%E6%9D%83/"/>
       <url>2022/01/26/CVE-2021-4034-pkexec-%E6%9C%AC%E5%9C%B0%E6%8F%90%E6%9D%83/</url>
