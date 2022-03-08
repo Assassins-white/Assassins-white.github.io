@@ -4,11 +4,32 @@
   
     
     <entry>
-      <title>Clash RCE复现</title>
+      <title>Linux本地提权CVE-2022-0847漏洞复现</title>
+      <link href="2022/03/08/Linux%E6%9C%AC%E5%9C%B0%E6%8F%90%E6%9D%83CVE-2022-0847%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
+      <url>2022/03/08/Linux%E6%9C%AC%E5%9C%B0%E6%8F%90%E6%9D%83CVE-2022-0847%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/</url>
+      
+        <content type="html"><![CDATA[<p>那些曾经击倒我的人，谢谢你们，躺着真舒服</p><hr><span id="more"></span><h3 id="漏洞简介"><a href="#漏洞简介" class="headerlink" title="漏洞简介"></a>漏洞简介</h3><p>新管道缓冲区结构的“flags”成员在 Linux 内核中的 copy_page_to_iter_pipe 和 push_pipe 函数中缺乏正确初始化的方式存在缺陷，因此可能包含陈旧的值。非特权本地用户可以使用此漏洞写入由只读文件支持的页面缓存中的页面，从而提升他们在系统上的权限</p><h3 id="影响范围"><a href="#影响范围" class="headerlink" title="影响范围"></a>影响范围</h3><p>内核影响版本：5.8 &lt;= Linux kernel &lt; 5.16.11 / 5.15.25 / 5.10.102</p><h3 id="EXP："><a href="#EXP：" class="headerlink" title="EXP："></a>EXP：</h3><p><a href="https://github.com/badboycxcc/script/blob/main/dirtypipez.c">https://github.com/badboycxcc/script/blob/main/dirtypipez.c</a></p><p>复现截图：</p><p><img src="../../../../img/22-3-8/1.png"></p><p>./exp 后面跟的文件要求：有suid权限的可执行文件，所属root即可，利用这个文件进行提权</p><p><img src="../../../../img/22-3-8/2.png"></p><p>可以使用以下命令可以找到这类文件<br><code>find / -perm -u=s -type f 2&gt;/dev/null</code></p><p><img src="../../../../img/22-3-8/3.png"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux本地提权 </tag>
+            
+            <tag> CVE-2022-0847 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Clash RCE 复现</title>
       <link href="2022/02/26/Clash-RCE%E5%A4%8D%E7%8E%B0/"/>
       <url>2022/02/26/Clash-RCE%E5%A4%8D%E7%8E%B0/</url>
       
-        <content type="html"><![CDATA[<p>今天都在发Clash的Rce，但是大哥说这Clash的漏洞21年就有了，而且也不是新技术，因为clash使用了Electron框架开发，框架的xss漏洞导致的rce，简单复现一下吧</p><hr><span id="more"></span><p>使用以下脚本复现：<a href="https://github.com/Jaky5155/clash_windows_RCE">Jaky5155/clash_windows_RCE</a></p><p>直接下载回来，拖入Clash订阅</p><p>然后点击 <code>节点</code>，就会触发，成功Rce了</p><p><img src="../../../../img/22-2-26/image-20220226014428884.png" alt="image-20220226014428884"></p><p>但是看着有加载失败的图片图标，让人看着很可疑，简单做一下伪装吧</p><p>在payload后面添加：<code>height=&quot;0&quot; width=&quot;0&quot;</code> </p><p><img src="../../../../img/22-2-26/image-20220226015951125.png" alt="image-20220226015951125"></p><p>这样就不会显示出失败的图片了</p><p>效果：</p><p><img src="../../../../img/22-2-26/image-20220226020109344.png" alt="image-20220226020109344"></p>]]></content>
+        <content type="html"><![CDATA[<p>今天都在发Clash的Rce，但是大哥说这Clash的漏洞21年就有了，而且也不是新技术，因为clash使用了Electron框架开发，框架的xss漏洞导致的rce，简单复现一下吧</p><hr><span id="more"></span><p>使用以下脚本复现：<a href="https://github.com/Jaky5155/clash_windows_RCE">Jaky5155/clash_windows_RCE</a><br>直接下载回来，拖入Clash订阅<br>然后点击 <code>节点</code>，就会触发，成功Rce了</p><p><img src="../../../../img/22-2-26/image-20220226014428884.png" alt="image-20220226014428884"></p><p>但是看着有加载失败的图片图标，让人看着很可疑，简单做一下伪装吧</p><p>在payload后面添加：<code>height=&quot;0&quot; width=&quot;0&quot;</code> </p><p><img src="../../../../img/22-2-26/image-20220226015951125.png" alt="image-20220226015951125"></p><p>这样就不会显示出失败的图片了</p><p>效果：</p><p><img src="../../../../img/22-2-26/image-20220226020109344.png" alt="image-20220226020109344"></p>]]></content>
       
       
       
