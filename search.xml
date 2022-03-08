@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>使用NVIDIA泄露证书来制作免杀</title>
+      <link href="2022/03/08/%E4%BD%BF%E7%94%A8NVIDIA%E6%B3%84%E9%9C%B2%E8%AF%81%E4%B9%A6%E6%9D%A5%E5%88%B6%E4%BD%9C%E5%85%8D%E6%9D%80/"/>
+      <url>2022/03/08/%E4%BD%BF%E7%94%A8NVIDIA%E6%B3%84%E9%9C%B2%E8%AF%81%E4%B9%A6%E6%9D%A5%E5%88%B6%E4%BD%9C%E5%85%8D%E6%9D%80/</url>
+      
+        <content type="html"><![CDATA[<p>爱意随风起，风止意难平</p><hr><span id="more"></span><p>泄露的证书14年就过期了</p><p><img src="../../../../img/22-3-8/4.png"></p><p>泄露有以下几个文件</p><p><img src="../../../../img/22-3-8/5.png"></p><p>先把做签名处理之前的文件拿去 <code>www.virustotal.com</code> 检测一下，58个av查杀</p><p><img src="../../../../img/22-3-8/9.png"></p><p>我们把要签名的文件放到当前目录下面，然后运行  <code>sign.bat 文件名</code></p><p><img src="../../../../img/22-3-8/6.png"></p><p>出现以下提示，我们输入 <code>2014/03/02</code> 就可以了，只要在证书的有效期内就行</p><p><img src="../../../../img/22-3-8/7.png"></p><p>这样就已经写好签名了，看看文件签名</p><p><img src="../../../../img/22-3-8/8.png"></p><p>那签名后的文件查杀再去 <code>www.virustotal.com</code> 检测，只有42个av查杀了，虽然失效了，还是能绕过一小部分杀软的</p><p><img src="../../../../img/22-3-8/10.png"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> NVIDIA泄露 </tag>
+            
+            <tag> 免杀 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Linux本地提权CVE-2022-0847漏洞复现</title>
       <link href="2022/03/08/Linux%E6%9C%AC%E5%9C%B0%E6%8F%90%E6%9D%83CVE-2022-0847%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
       <url>2022/03/08/Linux%E6%9C%AC%E5%9C%B0%E6%8F%90%E6%9D%83CVE-2022-0847%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/</url>
