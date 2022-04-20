@@ -4,6 +4,29 @@
   
     
     <entry>
+      <title>CRLF漏洞-&gt;URL跳转变XSS</title>
+      <link href="2022/04/20/CRLF%E6%BC%8F%E6%B4%9E-URL%E8%B7%B3%E8%BD%AC%E5%8F%98XSS/"/>
+      <url>2022/04/20/CRLF%E6%BC%8F%E6%B4%9E-URL%E8%B7%B3%E8%BD%AC%E5%8F%98XSS/</url>
+      
+        <content type="html"><![CDATA[<p>人一定要忠于自己年轻时的梦想</p><span id="more"></span><hr><p>URL跳转漏洞</p><p><img src="../../../../img/22-4-20/1.png" alt="image-20220226014428884"></p><p>测试CRLF，前面加一个 <code>%a</code> 会解析为header头</p><p>payload: <code>%0aSet-Cookie:user%3dsystem</code></p><p><img src="../../../../img/22-4-20/2.png" alt="image-20220226014428884"></p><p>浏览器Response Headers:</p><p><img src="../../../../img/22-4-20/3.png" alt="image-20220226014428884"></p><p>前面加上 <code>%0a%0d%0a%0d</code> 或者 <code>%0d%0a%0d%0a</code> 后面的内容会解析为body体</p><p><img src="../../../../img/22-4-20/4.png" alt="image-20220226014428884"></p><p>插入XSS Payload测试</p><p><img src="../../../../img/22-4-20/5.png" alt="image-20220226014428884"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> XSS </tag>
+            
+            <tag> CRLF </tag>
+            
+            <tag> URL跳转 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>夜神模拟器安装APP桌面停止运行解决方法</title>
       <link href="2022/03/17/%E5%A4%9C%E7%A5%9E%E6%A8%A1%E6%8B%9F%E5%99%A8%E5%AE%89%E8%A3%85APP%E6%A1%8C%E9%9D%A2%E5%81%9C%E6%AD%A2%E8%BF%90%E8%A1%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
       <url>2022/03/17/%E5%A4%9C%E7%A5%9E%E6%A8%A1%E6%8B%9F%E5%99%A8%E5%AE%89%E8%A3%85APP%E6%A1%8C%E9%9D%A2%E5%81%9C%E6%AD%A2%E8%BF%90%E8%A1%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
