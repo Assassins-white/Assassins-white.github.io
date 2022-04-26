@@ -101,10 +101,11 @@
 <meta property="og:image" content="https://i.loli.net/2019/09/03/BIfRGpOFxNCWXAS.png">
 <meta property="og:image" content="https://i.loli.net/2019/09/03/HKOR2QpoYZezcJ1.png">
 <meta property="og:image" content="https://i.loli.net/2019/09/03/ofJ6PSIQn2Zpy5L.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/03/ipJqKUVGf2om3a5.png">
 <meta property="og:image" content="https://i.loli.net/2019/09/03/SIx3iYlRtLW2Dsw.png">
 <meta property="og:image" content="https://i.loli.net/2019/09/03/9koFJhUHL2G8BP3.png">
 <meta property="article:published_time" content="2019-09-03T04:07:17.000Z">
-<meta property="article:modified_time" content="2021-04-18T05:25:15.313Z">
+<meta property="article:modified_time" content="2022-04-26T08:13:38.721Z">
 <meta property="article:author" content="Assassins 小白">
 <meta property="article:tag" content="Ettercat">
 <meta property="article:tag" content="DNS欺骗">
@@ -361,46 +362,46 @@
 
 <h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><p>打开Ettercap的DNS文件进行编辑，在kali Linux 2.0的文件路径为 <code>/etc/ettercap/etter.dns</code></p>
 <p>编辑文件: <code>leafpad /etc/ettercap/etter.dns</code></p>
-<p><img src="https://i.loli.net/2019/09/03/JsoSHahNOt9E2cM.png" alt="image.png"></p>
+<p><img src="https://i.loli.net/2019/09/03/JsoSHahNOt9E2cM.png" alt="Assassins小白"></p>
 <p>* 代表所有域名，后边就是你要欺骗他们访问的地址，这里我写的是kali虚拟机的IP，然后保存</p>
 <h2 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h2><p>再来编辑<code>/var/www/html/index.html</code>文件  改成你自定义页面 这里我简单的改了下</p>
-<p><img src="https://i.loli.net/2019/09/03/uYR6WErx4To7pJl.png" alt="image.png"></p>
+<p><img src="https://i.loli.net/2019/09/03/uYR6WErx4To7pJl.png" alt="Assassins小白"></p>
 <p>因为后面我们要启动apache服务，也就是网页服务器，这是主页文件，说白了目的是当DNS欺骗成功后，受害者访问网站后，打开的页面就是我们这里的这个主页文件里边的内容</p>
 <h2 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h2><p>现在我们在到终端输入命令<code>service apache2 start</code>来启动apache服务器 (把本机作为一个服务器) </p>
-<p><img src="https://i.loli.net/2019/09/03/AjdCbUQWFZgmDhR.png" alt="image.png"></p>
+<p><img src="https://i.loli.net/2019/09/03/AjdCbUQWFZgmDhR.png" alt="iAssassins小白"></p>
 <p>访问虚拟机kali的IP看看</p>
-<p><img src="https://i.loli.net/2019/09/03/WwK49Fm6GlCqRuf.png" alt="image.png"></p>
+<p><img src="https://i.loli.net/2019/09/03/WwK49Fm6GlCqRuf.png" alt="Assassins小白"></p>
 <p>显示我们的主页，说明apache服务器已经开启了</p>
 <h2 id="第四步"><a href="#第四步" class="headerlink" title="第四步"></a>第四步</h2><p>输入命令<code>ettercap -G</code>来进入ettercap的图形界面 </p>
-<p><img src="https://i.loli.net/2019/09/03/XYnSCKpsuJFLgN2.png" alt="image.png"></p>
+<p><img src="https://i.loli.net/2019/09/03/XYnSCKpsuJFLgN2.png" alt="Assassins小白"></p>
 <p><code>Sniff</code> —&gt; <code>Unified sniffing</code></p>
-<p><img src="https://i.loli.net/2019/09/03/5bhgsBCoL7GiWmf.png" alt="image.png"></p>
+<p><img src="https://i.loli.net/2019/09/03/5bhgsBCoL7GiWmf.png" alt="Assassins小白"></p>
 <p>选择你的网卡 确定</p>
-<p><img src="https://i.loli.net/2019/09/03/STsdAzwHjiL5oPY.png" alt="image.png"></p>
+<p><img src="https://i.loli.net/2019/09/03/STsdAzwHjiL5oPY.png" alt="Assassins小白"></p>
 <p>扫描局域网下在线的主机</p>
 <p><code>Hosts</code> —&gt; <code>Scan for hosts</code></p>
-<p><img src="https://i.loli.net/2019/09/03/qCX7VMg23ecRKhE.png" alt="image.png"></p>
-<p><img src="https://i.loli.net/2019/09/03/CoGycVrhT8RbKIk.png" alt="image.png"></p>
+<p><img src="https://i.loli.net/2019/09/03/qCX7VMg23ecRKhE.png" alt="Assassins小白"></p>
+<p><img src="https://i.loli.net/2019/09/03/CoGycVrhT8RbKIk.png" alt="Assassins小白"></p>
 <p>扫描完，然后选择 <code>Hosts list</code> 查看存活列表</p>
-<p><img src="https://i.loli.net/2019/09/03/WOl3M87jgca1zwq.png" alt="image.png"></p>
+<p><img src="https://i.loli.net/2019/09/03/WOl3M87jgca1zwq.png" alt="Assassins小白"></p>
 <p>我们的物理机IP是 <code>192.168.10.180</code> 我们就拿我们物理机做实验,欺骗我们物理机</p>
-<p><img src="https://i.loli.net/2019/09/03/a3Db7AwJ1vPXEjc.png" alt="image.png"></p>
+<p><img src="https://i.loli.net/2019/09/03/a3Db7AwJ1vPXEjc.png" alt="Assassins小白"></p>
 <p>我们把网关 <code>192.168.10.1</code> 添加到Target 1</p>
 <p>把要欺骗的IP添加到Targer 2</p>
-<p><img src="https://i.loli.net/2019/09/03/q5RLTbmgA2GkrIz.png" alt="image.png"></p>
+<p><img src="https://i.loli.net/2019/09/03/q5RLTbmgA2GkrIz.png" alt="Assassins小白"></p>
 <p>然后点击 <code>Mitm</code> —&gt; <code>ARP poisoning</code></p>
-<p><img src="https://i.loli.net/2019/09/03/BIfRGpOFxNCWXAS.png" alt="image.png"></p>
+<p><img src="https://i.loli.net/2019/09/03/BIfRGpOFxNCWXAS.png" alt="Assassins小白"></p>
 <p>第一个打勾，然后确定</p>
-<p><img src="https://i.loli.net/2019/09/03/HKOR2QpoYZezcJ1.png" alt="image.png"></p>
+<p><img src="https://i.loli.net/2019/09/03/HKOR2QpoYZezcJ1.png" alt="Assassins小白"></p>
 <p>再点击 <code>Plugins</code> —&gt; <code>Manage the plugins</code></p>
-<p><img src="https://i.loli.net/2019/09/03/ofJ6PSIQn2Zpy5L.png" alt="image.png"></p>
+<p><img src="https://i.loli.net/2019/09/03/ofJ6PSIQn2Zpy5L.png" alt="Assassins小白"></p>
 <p>配置插件  我们要进行的是DNS欺骗 双击<code>dns_spoof</code></p>
-<p>![ZSXZ_2OTV_U_`MKM5EGI_M9.png](<a target="_blank" rel="noopener" href="https://i.loli.net/2019/09/03/ipJqKUVGf2om3a5.png">https://i.loli.net/2019/09/03/ipJqKUVGf2om3a5.png</a>)</p>
+<p><img src="https://i.loli.net/2019/09/03/ipJqKUVGf2om3a5.png" alt="Assassins小白"></p>
 <p>然后点击 <code>Start</code> —&gt; <code>Start sniffing</code>  </p>
 <p>开始DNS欺骗 这样就开始工作了 </p>
-<p><img src="https://i.loli.net/2019/09/03/SIx3iYlRtLW2Dsw.png" alt="DGC_B39_Y_ZTKIS7KSPJF_L.png"></p>
+<p><img src="https://i.loli.net/2019/09/03/SIx3iYlRtLW2Dsw.png" alt="Assassins小白"></p>
 <p>然后我们物理机访问任何网站都会被解析到192.168.10.167(虚拟机kali)这个地址</p>
-<p><img src="https://i.loli.net/2019/09/03/9koFJhUHL2G8BP3.png" alt="XZ1RD9Y3C4216DJ8OBMYI7D.png"></p>
+<p><img src="https://i.loli.net/2019/09/03/9koFJhUHL2G8BP3.png" alt="Assassins小白"></p>
 
       
     </div>
@@ -526,7 +527,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -539,7 +540,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">85</span>
+                  <span class="site-state-item-count">87</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>

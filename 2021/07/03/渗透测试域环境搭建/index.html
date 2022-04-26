@@ -109,7 +109,7 @@
 <meta property="og:image" content="https://assassins-white.github.io/img/21-07-03/21.png">
 <meta property="og:image" content="https://assassins-white.github.io/img/21-07-03/22.png">
 <meta property="article:published_time" content="2021-07-03T12:45:38.000Z">
-<meta property="article:modified_time" content="2021-07-03T14:53:44.063Z">
+<meta property="article:modified_time" content="2022-04-26T08:06:23.285Z">
 <meta property="article:author" content="Assassins 小白">
 <meta property="article:tag" content="渗透测试">
 <meta property="article:tag" content="域环境">
@@ -366,55 +366,55 @@
 <p><strong>Windows 10</strong>：192.168.174.132        域成员机器</p>
 <p><strong>Server 2012</strong>：192.168.174.133        使用Server 2012做域控服务器</p>
 <h3 id="安装域"><a href="#安装域" class="headerlink" title="安装域"></a>安装域</h3><p>域控的IP须是静态的，静态IP设置如下</p>
-<p><img src="../../../../img/21-07-03/1.png"></p>
+<p><img src="../../../../img/21-07-03/1.png" alt="Assassins小白"></p>
 <p>更改域控计算机名，然后重启</p>
-<p><img src="../../../../img/21-07-03/2.png"></p>
+<p><img src="../../../../img/21-07-03/2.png" alt="Assassins小白"></p>
 <p><strong>开始安装AD服务</strong></p>
 <p>添加角色，一直默认下一步到 “服务器角色”，勾选Active Directory 域服务-&gt;添加功能，下一步</p>
-<p><img src="../../../../img/21-07-03/3.png"></p>
+<p><img src="../../../../img/21-07-03/3.png" alt="Assassins小白"></p>
 <p>到这里点击安装</p>
-<p><img src="../../../../img/21-07-03/4.png"></p>
+<p><img src="../../../../img/21-07-03/4.png" alt="Assassins小白"></p>
 <p>安装完成后，点击”将此服务器提升为域控制器”</p>
-<p><img src="../../../../img/21-07-03/5.png"></p>
+<p><img src="../../../../img/21-07-03/5.png" alt="Assassins小白"></p>
 <p>添加新林，设置根域名为 pentest.local </p>
 <p>PS：域名随意，但是最好不要填外网存在的域名，不然通外网解析容易出错</p>
-<p><img src="../../../../img/21-07-03/6.png"></p>
+<p><img src="../../../../img/21-07-03/6.png" alt="Assassins小白"></p>
 <p>设置还原模式密码，下一步</p>
-<p><img src="../../../../img/21-07-03/7.png"></p>
+<p><img src="../../../../img/21-07-03/7.png" alt="Assassins小白"></p>
 <p>一路默认下一步，然后点击安装</p>
-<p><img src="../../../../img/21-07-03/8.png"></p>
+<p><img src="../../../../img/21-07-03/8.png" alt="Assassins小白"></p>
 <p>安装完后会自动重启，再登录的时候会看到账号名称发生了变化，变成了 PENTEST\Administrator </p>
 <p>PS：这是域账号的登录模式，要登录一个域，需要在账号前面加上域名称和斜杠</p>
-<p><img src="../../../../img/21-07-03/9.png"></p>
+<p><img src="../../../../img/21-07-03/9.png" alt="Assassins小白"></p>
 <p>域成员机器的DNS服务器设置成域控的IP，如下</p>
-<p><img src="../../../../img/21-07-03/10.png"></p>
+<p><img src="../../../../img/21-07-03/10.png" alt="Assassins小白"></p>
 <h3 id="加入域"><a href="#加入域" class="headerlink" title="加入域"></a>加入域</h3><p>创建好域后，将Windows7和Windows10加入域，如下</p>
 <p>域填写我们的域名字，计算机名随便填</p>
-<p><img src="../../../../img/21-07-03/11.png"></p>
+<p><img src="../../../../img/21-07-03/11.png" alt="Assassins小白"></p>
 <p>输入域控本地管理员的账号密码，加入域</p>
-<p><img src="../../../../img/21-07-03/12.png"></p>
+<p><img src="../../../../img/21-07-03/12.png" alt="Assassins小白"></p>
 <p>成功加入pentest.local域</p>
-<p><img src="../../../../img/21-07-03/13.png"></p>
+<p><img src="../../../../img/21-07-03/13.png" alt="Assassins小白"></p>
 <p>Windows10相同的操作加入域</p>
-<p><img src="../../../../img/21-07-03/14.png"></p>
+<p><img src="../../../../img/21-07-03/14.png" alt="Assassins小白"></p>
 <h3 id="添加域用户"><a href="#添加域用户" class="headerlink" title="添加域用户"></a>添加域用户</h3><p>重启，然后去域控给他们添加域用户</p>
 <p>点击开始-&gt;管理工具</p>
-<p><img src="../../../../img/21-07-03/15.png"></p>
+<p><img src="../../../../img/21-07-03/15.png" alt="Assassins小白"></p>
 <p>展开 pentest.local ，点击 Computers ，可以查看到域中新添加了两台计算机，分别是 win7和 win10</p>
 <p>加入域后，还需要有域账号才能登录域</p>
-<p><img src="../../../../img/21-07-03/16.png"></p>
+<p><img src="../../../../img/21-07-03/16.png" alt="Assassins小白"></p>
 <p>在域名上右键，新建-&gt;用户</p>
-<p><img src="../../../../img/21-07-03/17.png"></p>
+<p><img src="../../../../img/21-07-03/17.png" alt="Assassins小白"></p>
 <p>添加域用户：win7</p>
-<p><img src="../../../../img/21-07-03/18.png"></p>
+<p><img src="../../../../img/21-07-03/18.png" alt="Assassins小白"></p>
 <p>给域用户设置密码</p>
-<p><img src="../../../../img/21-07-03/19.png"></p>
+<p><img src="../../../../img/21-07-03/19.png" alt="Assassins小白"></p>
 <p>添加两个域用户</p>
-<p><img src="../../../../img/21-07-03/20.png"></p>
+<p><img src="../../../../img/21-07-03/20.png" alt="Assassins小白"></p>
 <p>然后去域成员账户登录</p>
 <p>点击切换用户，使用域账号格式 (域名称\域用户) 进行登录</p>
-<p><img src="../../../../img/21-07-03/21.png"></p>
-<p><img src="../../../../img/21-07-03/22.png"></p>
+<p><img src="../../../../img/21-07-03/21.png" alt="Assassins小白"></p>
+<p><img src="../../../../img/21-07-03/22.png" alt="Assassins小白"></p>
 
       
     </div>
@@ -540,7 +540,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -553,7 +553,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">85</span>
+                  <span class="site-state-item-count">87</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>

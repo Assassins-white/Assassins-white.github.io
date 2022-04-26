@@ -94,7 +94,7 @@
 <meta property="og:image" content="https://assassins-white.github.io/img/22-1-13/image-20220119142428532.png">
 <meta property="og:image" content="https://assassins-white.github.io/img/22-1-13/image-20220119142447635.png">
 <meta property="article:published_time" content="2022-01-13T06:17:25.000Z">
-<meta property="article:modified_time" content="2022-01-26T08:08:19.758Z">
+<meta property="article:modified_time" content="2022-04-26T08:09:23.312Z">
 <meta property="article:author" content="Assassins 小白">
 <meta property="article:tag" content="文件包含">
 <meta property="article:tag" content="Windows特性">
@@ -355,20 +355,20 @@
 <h2 id="利用方法"><a href="#利用方法" class="headerlink" title="利用方法"></a>利用方法</h2><p>我们可以将文件名未知部分的字符串使用 <code>&lt;</code> 或 <code>&gt;</code> 代替，但是需要注意：一个 <code>&lt;</code> 或 <code>&gt;</code> 只能代表一个字符</p>
 <p>如果我们上传的马子为 shell.php，那么请求 <code>s&lt;</code> 或者 <code>s&gt;</code> 都是访问不到文件的。需要使用 <code>s&lt;&lt;</code> 才能访问到，含义为继续往下搜索</p>
 <h2 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h2><p><strong>文件包含漏洞：index.php</strong></p>
-<p><img src="../../../../img/22-1-13/image-20220119142152242.png" alt="image-20220119142152242"></p>
+<p><img src="../../../../img/22-1-13/image-20220119142152242.png" alt="Assassins小白"></p>
 <p><strong>webshell文件：shell.php</strong></p>
-<p><img src="../../../../img/22-1-13/image-20220119142216006.png" alt="image-20220119142216006"></p>
+<p><img src="../../../../img/22-1-13/image-20220119142216006.png" alt="Assassins小白"></p>
 <p>我们使用上述姿势包含 <code>shell.php</code> 文件</p>
-<p><img src="../../../../img/22-1-13/image-20220119142240844.png" alt="image-20220119142240844"></p>
+<p><img src="../../../../img/22-1-13/image-20220119142240844.png" alt="Assassins小白"></p>
 <p><strong>测试发现，在使用 <code>&lt;&lt;</code> 去匹配时，会优先匹配值最小的文件名称</strong></p>
 <p><strong>如下文件名：</strong></p>
-<p><img src="../../../../img/22-1-13/image-20220119142343249.png" alt="image-20220119142343249"></p>
+<p><img src="../../../../img/22-1-13/image-20220119142343249.png" alt="Assassins小白"></p>
 <p>我们直接匹配 <code>2&lt;&lt;</code>会匹配到最小的 <code>202033333333333333333333.php</code> 文件</p>
-<p><img src="../../../../img/22-1-13/image-20220119142408230.png" alt="image-20220119142408230"></p>
+<p><img src="../../../../img/22-1-13/image-20220119142408230.png" alt="Assassins小白"></p>
 <p>如果需要匹配2022文件，需要增加文件的准确度，也就是 <code>2022&lt;&lt;</code></p>
-<p><img src="../../../../img/22-1-13/image-20220119142428532.png" alt="image-20220119142428532"></p>
+<p><img src="../../../../img/22-1-13/image-20220119142428532.png" alt="Assassins小白"></p>
 <h2 id="完结"><a href="#完结" class="headerlink" title="完结"></a>完结</h2><p>此特性并不是只有文件包含函数才可用，事实上还有很多函数也一样可利用这个特性，我们在进行代码审计的时候也可以注意一下，说不定就能挖出意想不到的漏洞</p>
-<p><img src="../../../../img/22-1-13/image-20220119142447635.png" alt="image-20220119142447635"></p>
+<p><img src="../../../../img/22-1-13/image-20220119142447635.png" alt="Assassins小白"></p>
 
       
     </div>
@@ -494,7 +494,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -507,7 +507,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">85</span>
+                  <span class="site-state-item-count">87</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>

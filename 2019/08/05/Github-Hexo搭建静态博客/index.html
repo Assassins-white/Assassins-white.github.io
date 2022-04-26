@@ -136,7 +136,7 @@
 <meta property="og:image" content="https://assassins-white.github.io/img/19-8-5/48.png">
 <meta property="og:image" content="https://assassins-white.github.io/img/19-8-5/49.png">
 <meta property="article:published_time" content="2019-08-05T08:03:12.000Z">
-<meta property="article:modified_time" content="2021-04-18T05:25:00.352Z">
+<meta property="article:modified_time" content="2022-04-26T08:13:46.381Z">
 <meta property="article:author" content="Assassins 小白">
 <meta property="article:tag" content="Github">
 <meta property="article:tag" content="Hexo">
@@ -397,43 +397,43 @@
 <p>Git：<a target="_blank" rel="noopener" href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></p>
 <p>接下来安装hexo，使用npm安装hexo</p>
 <p>安装命令：npm install -g hexo-cli</p>
-<p><img src="../../../../img/19-8-5/1.png"></p>
+<p><img src="../../../../img/19-8-5/1.png" alt="Assassins小白"></p>
 <p>安装完了验证一下是否成功</p>
 <p>命令：hexo -v</p>
-<p><img src="../../../../img/19-8-5/2.png"></p>
+<p><img src="../../../../img/19-8-5/2.png" alt="Assassins小白"></p>
 <p>ok 安装完成</p>
 <p>接下来我们先用hexo进行本地建站</p>
 <p>先初始化Blog网站框架</p>
 <p>在本地电脑上建立一个Blog目录，并在shell中进行下面命令，初始化框架:</p>
 <p>hexo init &lt;文件夹&gt;        //博客文件夹名称</p>
-<p><img src="../../../../img/19-8-5/3.png"></p>
+<p><img src="../../../../img/19-8-5/3.png" alt="Assassins小白"></p>
 <p>cd &lt;文件夹&gt;               //进入博客文件夹目录 </p>
-<p><img src="../../../../img/19-8-5/4.png"></p>
+<p><img src="../../../../img/19-8-5/4.png" alt="Assassins小白"></p>
 <p>npm install</p>
-<p><img src="../../../../img/19-8-5/5.png"></p>
+<p><img src="../../../../img/19-8-5/5.png" alt="Assassins小白"></p>
 <p>或者直接进入Blog目录中，执行hexo init和npm install  (blog目录自己先建好)</p>
 <p>都是一样的，不习惯命令的话就用第二种。</p>
 <p>_config.yml:</p>
 <p>整个站点的配置信息：可以配置网站的title、author、language、目录、文章、日期、分页、扩展（主题名称、部署）信息，这个文件是博客配置文件，改错了会导致网站不正常</p>
-<p><img src="../../../../img/19-8-5/6.png"></p>
+<p><img src="../../../../img/19-8-5/6.png" alt="Assassins小白"></p>
 <p>source: 资源文件夹,存放用户资源，这个是博客文章源码所存放的地方</p>
 <p>themes: 主题文件夹，Hexo会根据此来生成静态页面，默认是官方的landscape主题</p>
 <p>先在本地站点调试好，也就是说在所谓的测试环境测试好，再部署到给生产环境（Github）</p>
 <p>写Blog文章</p>
 <p>执行下面的命令创建一篇新的文章:</p>
 <p>hexo new &lt;文章名&gt;</p>
-<p><img src="../../../../img/19-8-5/7.png"></p>
+<p><img src="../../../../img/19-8-5/7.png" alt="Assassins小白"></p>
 <p>生成的文章在source/_posts文件夹下面 </p>
-<p><img src="../../../../img/19-8-5/8.png"></p>
+<p><img src="../../../../img/19-8-5/8.png" alt="Assassins小白"></p>
 <p>可以看到文章已经生成好了</p>
 <p>命令：</p>
 <p>$ hexo generate  简写：hexo g </p>
 <p>生成静态文件</p>
-<p><img src="../../../../img/19-8-5/9.png"></p>
+<p><img src="../../../../img/19-8-5/9.png" alt="Assassins小白"></p>
 <p>$ hexo server    简写：hexo s </p>
-<p><img src="../../../../img/19-8-5/10.png"></p>
+<p><img src="../../../../img/19-8-5/10.png" alt="Assassins小白"></p>
 <p>启动服务器，默认情况下，访问网址为： <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> </p>
-<p><img src="../../../../img/19-8-5/11.png"></p>
+<p><img src="../../../../img/19-8-5/11.png" alt="Assassins小白"></p>
 <p>ok这就是本地搭建成功的效果，不过这是默认主题，可以根据需要改主题</p>
 <p>接下来讲GitHub，先注册GitHub账号，这个我就不说了。</p>
 <p>设置GitHub SSH Key</p>
@@ -442,100 +442,100 @@
 <p><code>git config --global user.name  &quot;你的GitHub用户名&quot;</code></p>
 <p>本地创建SSH Key</p>
 <p><code>ssh-keygen -t rsa -C &quot;邮箱地址”</code></p>
-<p><img src="../../../../img/19-8-5/12.png"></p>
+<p><img src="../../../../img/19-8-5/12.png" alt="Assassins小白"></p>
 <p>首先打开用户根目录（用户根目录一般为为C:\Users\username）查看是否已经有了SSH Key的文件夹.ssh </p>
-<p><img src="../../../../img/19-8-5/13.png"></p>
+<p><img src="../../../../img/19-8-5/13.png" alt="Assassins小白"></p>
 <p>ssh  可能隐藏了，所以需要打开隐藏的文件</p>
 <p>添加生成的SSH Key到GitHub账户</p>
 <p>打开在当前用户的根目录下生成的.ssh文件里面的ssh.pub（ssh 公钥）,拷贝其内容到[SSH and GPG keys -&gt; SSH Keys -&gt; Add SSH Key]</p>
-<p><img src="../../../../img/19-8-5/14.png"></p>
-<p><img src="../../../../img/19-8-5/15.png"></p>
+<p><img src="../../../../img/19-8-5/14.png" alt="Assassins小白"></p>
+<p><img src="../../../../img/19-8-5/15.png" alt="Assassins小白"></p>
 <p>验证下SSH是否设置成功</p>
-<p>ssh -T <a href="mailto:&#x67;&#105;&#x74;&#x40;&#103;&#105;&#x74;&#104;&#117;&#x62;&#46;&#x63;&#x6f;&#109;">&#x67;&#105;&#x74;&#x40;&#103;&#105;&#x74;&#104;&#117;&#x62;&#46;&#x63;&#x6f;&#109;</a></p>
+<p>ssh -T <a href="mailto:&#103;&#105;&#x74;&#64;&#103;&#105;&#x74;&#104;&#x75;&#x62;&#46;&#99;&#x6f;&#109;">&#103;&#105;&#x74;&#64;&#103;&#105;&#x74;&#104;&#x75;&#x62;&#46;&#99;&#x6f;&#109;</a></p>
 <p>第一次提示不能连接，直接输入yes即可</p>
-<p><img src="../../../../img/19-8-5/16.png"></p>
+<p><img src="../../../../img/19-8-5/16.png" alt="Assassins小白"></p>
 <p>GitHub部署</p>
 <p>建立GitHub Pages之后，即可以将本地搭建的Hexo网站部署到GitHub上去</p>
 <p>创建存储库，名字就写你GitHub名字+Github.io</p>
-<p><img src="../../../../img/19-8-5/17.png"></p>
+<p><img src="../../../../img/19-8-5/17.png" alt="Assassins小白"></p>
 <p>如下</p>
-<p><img src="../../../../img/19-8-5/18.png"></p>
+<p><img src="../../../../img/19-8-5/18.png" alt="Assassins小白"></p>
 <p>命令都敲一遍</p>
-<p><img src="../../../../img/19-8-5/19.png"></p>
+<p><img src="../../../../img/19-8-5/19.png" alt="Assassins小白"></p>
 <p>这就好了 </p>
-<p><img src="../../../../img/19-8-5/20.png"></p>
+<p><img src="../../../../img/19-8-5/20.png" alt="Assassins小白"></p>
 <p>然后修改一下站点_config.yml配置文件</p>
 <p>repo: <a target="_blank" rel="noopener" href="https://github.com/username/username.github.io.git%EF%BC%88%E4%BD%A0%E7%9A%84GitHub%E9%A1%B5%E9%9D%A2%E4%BB%93%E5%BA%93%E5%9C%B0%E5%9D%80%EF%BC%89">https://github.com/username/username.github.io.git（你的GitHub页面仓库地址）</a></p>
 <p>branch: master</p>
-<p><img src="../../../../img/19-8-5/21.png"></p>
+<p><img src="../../../../img/19-8-5/21.png" alt="Assassins小白"></p>
 <p>博客文件夹目录执行命令</p>
 <p>Hexo g -d</p>
-<p><img src="../../../../img/19-8-5/22.png"></p>
+<p><img src="../../../../img/19-8-5/22.png" alt="Assassins小白"></p>
 <p>报错，输入命令</p>
 <p>npm install –save hexo-deployer-git</p>
-<p><img src="../../../../img/19-8-5/23.png"></p>
+<p><img src="../../../../img/19-8-5/23.png" alt="Assassins小白"></p>
 <p>输入命令Hexo g -d部署到GitHub o:p&gt;</p>
-<p><img src="../../../../img/19-8-5/24.png"></p>
-<p><img src="../../../../img/19-8-5/25.png"></p>
+<p><img src="../../../../img/19-8-5/24.png" alt="Assassins小白"></p>
+<p><img src="../../../../img/19-8-5/25.png" alt="Assassins小白"></p>
 <p>访问域名(<a target="_blank" rel="noopener" href="https://你的github名字.github.io/">https://你的GitHub名字.github.io</a>)</p>
-<p><img src="../../../../img/19-8-5/26.png"></p>
+<p><img src="../../../../img/19-8-5/26.png" alt="Assassins小白"></p>
 <p>模板太丑了，换个模板</p>
 <p>Hexo博客根目录打开Shell终端，输入下面命令</p>
 <p>git clone <a target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next">https://github.com/iissnan/hexo-theme-next</a> themes/next</p>
-<p><img src="../../../../img/19-8-5/27.png"></p>
-<p><img src="../../../../img/19-8-5/28.png"></p>
+<p><img src="../../../../img/19-8-5/27.png" alt="Assassins小白"></p>
+<p><img src="../../../../img/19-8-5/28.png" alt="Assassins小白"></p>
 <p>下载完成，设置配置文件</p>
-<p><img src="../../../../img/19-8-5/29.png"></p>
+<p><img src="../../../../img/19-8-5/29.png" alt="Assassins小白"></p>
 <p>这里改下模板的名字</p>
 <p>Hexo s  本地搭建看一下效果</p>
-<p><img src="../../../../img/19-8-5/30.png"></p>
+<p><img src="../../../../img/19-8-5/30.png" alt="Assassins小白"></p>
 <p>这个模板看起来还是很难看，换一个样式</p>
 <p>进入模板配置文件</p>
-<p><img src="../../../../img/19-8-5/31.png"></p>
+<p><img src="../../../../img/19-8-5/31.png" alt="Assassins小白"></p>
 <p>设置改动一下</p>
-<p><img src="../../../../img/19-8-5/32.png"></p>
-<p><img src="../../../../img/19-8-5/33.png"></p>
+<p><img src="../../../../img/19-8-5/32.png" alt="Assassins小白"></p>
+<p><img src="../../../../img/19-8-5/33.png" alt="Assassins小白"></p>
 <p>再看看效果</p>
-<p><img src="../../../../img/19-8-5/34.png"></p>
+<p><img src="../../../../img/19-8-5/34.png" alt="Assassins小白"></p>
 <p>这样看着就比较舒服</p>
 <p>现在使用命令Hexo g -d部署到GitHub上面去</p>
-<p><img src="../../../../img/19-8-5/35.png"></p>
+<p><img src="../../../../img/19-8-5/35.png" alt="Assassins小白"></p>
 <p>以后写文章直接输入以下命令</p>
 <p>hexo new “文章名字”</p>
 <p>hexo g -d</p>
-<p><img src="../../../../img/19-8-5/36.png"></p>
+<p><img src="../../../../img/19-8-5/36.png" alt="Assassins小白"></p>
 <p>下面底部这里改成我们自定义的文字</p>
 <p>进入文件夹 themes\next\layout_partials，编辑footer.swig文件</p>
-<p><img src="../../../../img/19-8-5/37.png"></p>
+<p><img src="../../../../img/19-8-5/37.png" alt="Assassins小白"></p>
 <p>修改一下这两处，再看一下效果 </p>
-<p><img src="../../../../img/19-8-5/38.png"></p>
+<p><img src="../../../../img/19-8-5/38.png" alt="Assassins小白"></p>
 <p>设置友情链接</p>
 <p>访问themes\next下面的_config.yml ，找关键字Blog rolls</p>
-<p><img src="../../../../img/19-8-5/39.png"></p>
+<p><img src="../../../../img/19-8-5/39.png" alt="Assassins小白"></p>
 <p>设置好后效果如下</p>
-<p><img src="../../../../img/19-8-5/40.png"></p>
+<p><img src="../../../../img/19-8-5/40.png" alt="Assassins小白"></p>
 <p>设置头像</p>
 <p>打开文件夹themes\next下的_config.yml文件</p>
 <p>搜索关键字Sidebar Avatar</p>
 <p>如下图设置</p>
-<p><img src="../../../../img/19-8-5/41.png"></p>
+<p><img src="../../../../img/19-8-5/41.png" alt="Assassins小白"></p>
 <p>查看效果</p>
-<p><img src="../../../../img/19-8-5/42.png"></p>
+<p><img src="../../../../img/19-8-5/42.png" alt="Assassins小白"></p>
 <p>使用&lt;!—more–&gt;隔开</p>
-<p><img src="../../../../img/19-8-5/43.png"></p>
+<p><img src="../../../../img/19-8-5/43.png" alt="Assassins小白"></p>
 <p>网站效果</p>
-<p><img src="../../../../img/19-8-5/44.png"></p>
-<p><img src="../../../../img/19-8-5/45.png"></p>
+<p><img src="../../../../img/19-8-5/44.png" alt="Assassins小白"></p>
+<p><img src="../../../../img/19-8-5/45.png" alt="Assassins小白"></p>
 <p>博客里面如果需要引用图片</p>
 <p>可以使用图床，比如 <a target="_blank" rel="noopener" href="https://sm.ms/">https://sm.ms/</a> ，调用图片网络地址</p>
-<p><img src="../../../../img/19-8-5/46.png"></p>
+<p><img src="../../../../img/19-8-5/46.png" alt="Assassins小白"></p>
 <p>或者在public文件夹下面新建一个img文件夹，图片就上传到这个文件夹 </p>
-<p><img src="../../../../img/19-8-5/47.png"></p>
+<p><img src="../../../../img/19-8-5/47.png" alt="Assassins小白"></p>
 <p>然后使用相对路径调用</p>
 <p>../../../../img/xxx.jpg</p>
-<p><img src="../../../../img/19-8-5/48.png"></p>
+<p><img src="../../../../img/19-8-5/48.png" alt="Assassins小白"></p>
 <p>效果图： </p>
-<p><img src="../../../../img/19-8-5/49.png"></p>
+<p><img src="../../../../img/19-8-5/49.png" alt="Assassins小白"></p>
 
       
     </div>
@@ -650,7 +650,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -663,7 +663,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">85</span>
+                  <span class="site-state-item-count">87</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
