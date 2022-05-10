@@ -647,7 +647,7 @@
       <link href="2020/03/11/BurpSuite%E8%87%AA%E5%8A%A8%E5%8C%96%E6%A3%80%E6%B5%8BCORS%E6%BC%8F%E6%B4%9E/"/>
       <url>2020/03/11/BurpSuite%E8%87%AA%E5%8A%A8%E5%8C%96%E6%A3%80%E6%B5%8BCORS%E6%BC%8F%E6%B4%9E/</url>
       
-        <content type="html"><![CDATA[<p>生活比电影狠多了，从来不给弱者安排大逆转的情节 </p><hr><span id="more"></span><p>BurpSuite的 <code>Match and Replace</code> 如下图设置</p><p><img src="../../../../img/20-3-11/1.png" alt="Assassins小白"></p><p>然后就会自动 加上/替换 Origin头为 <code>foo.example.org</code></p><p><img src="../../../../img/20-3-11/2.png" alt="Assassins小白"></p><p>然后再寻找返回头里面存在 <code>Origin: foo.example.org</code> 的就可以了，可以使用search</p>]]></content>
+        <content type="html"><![CDATA[<p>生活比电影狠多了，从来不给弱者安排大逆转的情节 </p><hr><span id="more"></span><p>BurpSuite的 <code>Match and Replace</code> 如下图设置</p><p>图下框起来的地方按我的方式填写<br>Match:  <code>^Origin: .*$</code><br>Replace:  <code>Origin: foo.example.org</code><br><img src="../../../../img/20-3-11/1.png" alt="Assassins小白"></p><p>然后就会自动替换Origin头为: <code>foo.example.org</code><br><img src="../../../../img/20-3-11/2.png" alt="Assassins小白"></p><p>切换到 <code>Auth-modified request</code> 请求查看修改后的请求，也可以使用search<br><img src="../../../../img/20-3-11/3.png" alt="Assassins小白"></p>]]></content>
       
       
       
