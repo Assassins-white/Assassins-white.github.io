@@ -4,6 +4,29 @@
   
     
     <entry>
+      <title>探测目标各种协议是否出网</title>
+      <link href="2022/05/19/%E6%8E%A2%E6%B5%8B%E7%9B%AE%E6%A0%87%E5%90%84%E7%A7%8D%E5%8D%8F%E8%AE%AE%E6%98%AF%E5%90%A6%E5%87%BA%E7%BD%91/"/>
+      <url>2022/05/19/%E6%8E%A2%E6%B5%8B%E7%9B%AE%E6%A0%87%E5%90%84%E7%A7%8D%E5%8D%8F%E8%AE%AE%E6%98%AF%E5%90%A6%E5%87%BA%E7%BD%91/</url>
+      
+        <content type="html"><![CDATA[<p>有人漏夜下西洋，有人风雪归故乡</p><hr><span id="more"></span><p>在内网渗透中，我们经常会碰到一些不出网的机器，不出网的原因有很多，常见的有：存在防火墙，安全设备拦截，设置了出网策略，只允许特定的协议或端口出网</p><p>遇到这种情况就可以使用如下命令简单判断来判断协议的出网情况</p><h3 id="ICMP"><a href="#ICMP" class="headerlink" title="ICMP"></a>ICMP</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping www.baidu.com</span><br></pre></td></tr></table></figure><p><img src="../../../../img/22-5-19/image-20220519165259919.png" alt="Assassins小白"></p><h3 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">telnet 192.168.32.130 135</span><br></pre></td></tr></table></figure><p><img src="../../../../img/22-5-19/image-20220519165437103.png" alt="Assassins小白"></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc 114.114.114.114 53</span><br></pre></td></tr></table></figure><p><img src="../../../../img/22-5-19/image-20220519165448673.png" alt="Assassins小白"></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc -zv 114.114.114.114 53</span><br></pre></td></tr></table></figure><p><img src="../../../../img/22-5-19/image-20220519165458258.png" alt="Assassins小白"></p><h3 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc -zuv 114.114.114.114 53</span><br></pre></td></tr></table></figure><p><img src="../../../../img/22-5-19/image-20220519165508253.png" alt="Assassins小白"></p><h3 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl www.baidu.com</span><br></pre></td></tr></table></figure><p><img src="../../../../img/22-5-19/image-20220519165521444.png" alt="Assassins小白"></p><h3 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dig 114.114.114.114 www.sina.com</span><br></pre></td></tr></table></figure><p><img src="../../../../img/22-5-19/image-20220519165533142.png" alt="Assassins小白"></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nslookup www.baidu.com</span><br></pre></td></tr></table></figure><p><img src="../../../../img/22-5-19/image-20220519165547217.png" alt="Assassins小白"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 内网渗透 </tag>
+            
+            <tag> 协议 </tag>
+            
+            <tag> 出网探测 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>MS08-067漏洞打中文版2003 Server SP2</title>
       <link href="2022/05/18/MS08-067%E6%BC%8F%E6%B4%9E%E6%89%93%E4%B8%AD%E6%96%87%E7%89%882003-Server-SP2/"/>
       <url>2022/05/18/MS08-067%E6%BC%8F%E6%B4%9E%E6%89%93%E4%B8%AD%E6%96%87%E7%89%882003-Server-SP2/</url>
